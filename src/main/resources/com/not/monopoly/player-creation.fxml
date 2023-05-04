@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -15,9 +17,63 @@
             <Image url="@../../../menuImages/menuBackroung.jpg" />
          </image>
       </ImageView>
-      <Pane prefHeight="200.0" prefWidth="200.0">
+      <Pane fx:id="playerNamePane" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Label layoutX="205.0" layoutY="69.0" prefHeight="219.0" prefWidth="870.0" text="How many people are playing?">
+            <Label fx:id="nameQuestion" layoutX="385.0" layoutY="135.0" text="Name your players:" visible="false">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Label>
+            <TextField fx:id="playerOneName" layoutX="454.0" layoutY="295.0" promptText="Player1's Name" visible="false">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="playerTwoName" layoutX="454.0" layoutY="373.0" promptText="Player2's Name" visible="false">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="playerThreeName" layoutX="454.0" layoutY="450.0" promptText="Player3's Name" visible="false">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="playerFourName" layoutX="454.0" layoutY="531.0" promptText="Player4's Name" visible="false">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <CheckBox fx:id="playerOneCheck" layoutX="835.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#handleCheckOne" visible="false">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="playerTwoCheck" layoutX="835.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#handleCheckTwo" visible="false">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="playerThreeCheck" layoutX="835.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#handleCheckThree" visible="false">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="playerFourCheck" layoutX="835.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#handleCheckFour" visible="false">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </CheckBox>
+            <Button fx:id="proceedToGameButton" layoutX="469.0" layoutY="619.0" mnemonicParsing="false" text="Proceed To Monopoly!" visible="false">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="playerCountPane" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="countQuestion" layoutX="205.0" layoutY="69.0" prefHeight="219.0" prefWidth="870.0" text="How many people are playing?">
                <font>
                   <Font size="60.0" />
                </font>
@@ -42,11 +98,6 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="cancelButton" layoutX="438.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#handleCancelButton" text="Cancel" visible="false">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
             <Button fx:id="confirmButton" layoutX="630.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#handleConfirmButton" text="Confirm" visible="false">
                <font>
                   <Font size="30.0" />
@@ -54,5 +105,10 @@
             </Button>
          </children>
       </Pane>
+      <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#handleCancelButton" text="Cancel" visible="false">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
    </children>
 </StackPane>
