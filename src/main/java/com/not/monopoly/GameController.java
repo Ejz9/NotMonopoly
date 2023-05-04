@@ -7,11 +7,11 @@ import javafx.scene.input.MouseEvent;
 import com.not.monopoly.Objects.*;
 import com.not.monopoly.Main.*;
 
-import static com.not.monopoly.Main.activePlayer;
+import java.util.Random;
+
+import static com.not.monopoly.Main.*;
 
 public class GameController {
-
-	private Player[] players;
 
 	@FXML
 	ImageView rollButton;
@@ -36,8 +36,17 @@ public class GameController {
 	}
 
 	public void	handleRollButton(){
-		if (!players[activePlayer].isInJail()){
+		Random random = new Random();
+		if (!players.get(activePlayer).isInJail()){
+			die1 = random.nextInt(1,6);
+			die2 = random.nextInt(1,6);
 
+			// Update player's position
+			playerPositions[activePlayer] += (die1 + die2);
+			if (playerPositions[activePlayer] >= 40) {
+				playerPositions[activePlayer] -= 40;
+				players.get(activePlayer).setBalance(players.get(activePlayer).getBalance() + 200);
+			}
 		} else {
 
 		}

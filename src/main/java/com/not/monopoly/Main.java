@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Main extends Application {
@@ -18,7 +19,7 @@ public class Main extends Application {
     protected static int die1;
     protected static int die2;
     protected static int doubleRolls;
-    protected static Player[] players;
+    protected static ArrayList<Player> players;
     protected static Property[] spaces;
     protected static int doubleRoll = 0;
     @Override
