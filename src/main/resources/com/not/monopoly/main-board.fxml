@@ -57,22 +57,22 @@
                         <Image url="@../../../images/rollDice.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="54.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                  <ImageView fx:id="buyButton" fitHeight="54.0" fitWidth="53.0" onMouseClicked="#handleBuyButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
                      <image>
                         <Image url="@../../../images/buyHouseIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="61.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+                  <ImageView fx:id="auctionButton" fitHeight="61.0" fitWidth="77.0" onMouseClicked="#handleAuctionButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="6">
                      <image>
                         <Image url="@../../../images/auctionIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                  <ImageView fx:id="tradeButton" fitHeight="58.0" fitWidth="58.0" onMouseClicked="#handleTradeButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
                      <image>
                         <Image url="@../../../images/tradeButton.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="107.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                  <ImageView fx:id="endTurnButton" fitHeight="107.0" fitWidth="65.0" onMouseClicked="#handleEndTurnButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
                      <image>
                         <Image url="@../../../images/endTurn.png" />
                      </image>
