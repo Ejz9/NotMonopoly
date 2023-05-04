@@ -4,32 +4,33 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class MenuController {
+public class PlayerCreationController {
     @FXML
     ImageView playButton;
 
     public void handlePlayButton() throws IOException {
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("player-creation.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
         Stage window = (Stage) playButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1280, 720));
+        window.setScene(new Scene(root, 800, 800));
 
     }
 
     @FXML
-    ImageView menuButton;
+    Button confrimBUtton;
     public void handleMenuButton() {
 
     }
 
     @FXML
-    ImageView exitButton;
+    Button cancelButton;
     public void handleExitButton() {
         System.exit(1);
     }
