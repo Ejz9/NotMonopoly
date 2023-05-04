@@ -15,17 +15,16 @@ public class MenuController {
     ImageView playButton;
 
     public void handlePlayButton() throws IOException {
-
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("player-creation.fxml")));
         Stage window = (Stage) playButton.getScene().getWindow();
         window.setScene(new Scene(root, 1280, 720));
-
     }
 
     @FXML
     ImageView menuButton;
     public void handleMenuButton() {
-
+        // TODO - Make Rules Screen
+        // TODO - Use Menu button for settings?
     }
 
     @FXML

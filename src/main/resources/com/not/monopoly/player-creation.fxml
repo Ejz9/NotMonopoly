@@ -22,7 +22,7 @@
                   <Font size="60.0" />
                </font>
             </Label>
-            <Button layoutX="251.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleBackButton" text="Back">
+            <Button fx:id="backButton" layoutX="251.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleBackButton" text="Back">
                <font>
                   <Font size="30.0" />
                </font>
@@ -37,7 +37,17 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="handleFourPlayerButton" layoutX="854.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleFourPlayerButton" text="4 Players">
+            <Button fx:id="fourPlayerButton" layoutX="854.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleFourPlayerButton" text="4 Players">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" layoutX="438.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#handleCancelButton" text="Cancel" visible="false">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="confirmButton" layoutX="630.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#handleConfirmButton" text="Confirm" visible="false">
                <font>
                   <Font size="30.0" />
                </font>
