@@ -19,12 +19,12 @@
                   <Image url="@../../../menuImages/playButton.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="553.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="menuButton" fitHeight="150.0" fitWidth="200.0" layoutX="553.0" layoutY="457.0" onMouseClicked="#handleMenuButton" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../menuImages/menuButton.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="553.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="exitButton" fitHeight="150.0" fitWidth="200.0" layoutX="553.0" layoutY="551.0" onMouseClicked="#handleExitButton" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../menuImages/quitButton.jpg" />
                </image>

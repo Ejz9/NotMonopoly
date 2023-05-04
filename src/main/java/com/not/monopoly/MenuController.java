@@ -20,6 +20,17 @@ public class Controller {
         Stage window = (Stage) playButton.getScene().getWindow();
         window.setScene(new Scene(root, 800, 800));
 
+    }
 
+    @FXML
+    ImageView menuButton;
+    public void handleMenuButton() {
+
+    }
+
+    @FXML
+    ImageView exitButton;
+    public void handleExitButton() {
+        System.exit(1);
     }
 }

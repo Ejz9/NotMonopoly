@@ -17,7 +17,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.show();
     }
-
+    // TODO - make player property squares empty with black outline
     public static void main(String[] args) {
         launch();
     }
