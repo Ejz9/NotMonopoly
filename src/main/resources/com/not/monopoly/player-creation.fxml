@@ -8,9 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0"
-           xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.PlayerCreationController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.PlayerCreationController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -24,22 +22,22 @@
                   <Font size="60.0" />
                </font>
             </Label>
-            <Button layoutX="251.0" layoutY="352.0" mnemonicParsing="false" text="Back">
+            <Button layoutX="251.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleBackButton" text="Back">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button layoutX="409.0" layoutY="352.0" mnemonicParsing="false" text="2 Players">
+            <Button fx:id="twoPlayerButton" layoutX="409.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleTwoPlayerButton" text="2 Players">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button layoutX="861.0" layoutY="352.0" mnemonicParsing="false" text="4 Players">
+            <Button fx:id="threePlayerButton" layoutX="630.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleThreePlayerButton" text="3 Players">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button layoutX="630.0" layoutY="352.0" mnemonicParsing="false" text="3 Players">
+            <Button fx:id="handleFourPlayerButton" layoutX="854.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleFourPlayerButton" text="4 Players">
                <font>
                   <Font size="30.0" />
                </font>

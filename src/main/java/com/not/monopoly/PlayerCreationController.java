@@ -15,23 +15,29 @@ public class PlayerCreationController {
     @FXML
     ImageView playButton;
 
-    public void handlePlayButton() throws IOException {
+    public void handleBackButton() throws IOException {
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu-screen.fxml")));
         Stage window = (Stage) playButton.getScene().getWindow();
-        window.setScene(new Scene(root, 800, 800));
+        window.setScene(new Scene(root, 1280, 720));
 
     }
 
     @FXML
-    Button confrimBUtton;
-    public void handleMenuButton() {
+    Button twoPlayerButton;
+    public void handleTwoPlayerButton() {
 
     }
 
     @FXML
-    Button cancelButton;
-    public void handleExitButton() {
-        System.exit(1);
+    Button threePlayerButton;
+    public void handleThreePlayerButton() {
+
+    }
+
+    @FXML
+    Button handleFourPlayerButton;
+    public void handleFourPlayerButton() {
+
     }
 }
