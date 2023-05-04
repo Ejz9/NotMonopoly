@@ -6,6 +6,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import com.not.monopoly.Objects.*;
 import com.not.monopoly.Main.*;
+import javafx.scene.layout.GridPane;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -13,6 +14,9 @@ import java.util.Random;
 import static com.not.monopoly.Main.*;
 
 public class GameController {
+
+	@FXML
+	public static GridPane gridPane;
 
 	@FXML
 	ImageView rollButton;
@@ -110,7 +114,8 @@ public class GameController {
 		pieces.put(1, player2Piece);
 		pieces.put(2, player3Piece);
 		pieces.put(3, player4Piece);
-
+		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(playerPositions.get(activePlayer)));
+		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(playerPositions.get(activePlayer)));
 	}
 
 	private static void	initPieceCoords() {
