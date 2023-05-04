@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.Controller">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.GameController">
    <children>
       <ImageView fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -45,12 +45,12 @@
             <RowConstraints maxHeight="194.0" minHeight="0.0" prefHeight="107.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fitHeight="85.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+            <ImageView fx:id="rollButton" fitHeight="85.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#handleRollButton" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <image>
                   <Image url="@../../../images/rollDice.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="130.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7">
+            <ImageView fx:id="managePropertyButton" fitHeight="130.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7">
                <image>
                   <Image url="@../../../images/propertyManagement.png" />
                </image>
