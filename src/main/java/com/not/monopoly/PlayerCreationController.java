@@ -12,13 +12,14 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class PlayerCreationController {
+    int playerCount;
     @FXML
-    ImageView playButton;
+    ImageView backButton;
 
     public void handleBackButton() throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu-screen.fxml")));
-        Stage window = (Stage) playButton.getScene().getWindow();
+        Stage window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 1280, 720));
 
     }
@@ -26,6 +27,10 @@ public class PlayerCreationController {
     @FXML
     Button twoPlayerButton;
     public void handleTwoPlayerButton() {
+        twoPlayerButton.setDisable(true);
+        int playerCount = 2;
+        threePlayerButton.setDisable(false);
+        handleFourPlayerButton.setDisable(false);
 
     }
 
@@ -38,6 +43,18 @@ public class PlayerCreationController {
     @FXML
     Button handleFourPlayerButton;
     public void handleFourPlayerButton() {
+
+    }
+
+    @FXML
+    Button handleConfirmButton;
+    public void handleConfirmButton() {
+
+    }
+
+    @FXML
+    Button handleCancelButton;
+    public void handleCancelButton() {
 
     }
 }
