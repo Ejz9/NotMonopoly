@@ -103,20 +103,14 @@ public class PlayerCreationController {
     @FXML
     Button proceedToGameButton;
     public void handlePlayerCreation() {
-        if (playerOneCheck.isSelected()) {
-            playerOneName.setEditable(false);
-        } else if (playerTwoCheck.isSelected()) {
-            playerTwoName.setEditable(false);
-        } else if (playerThreeCheck.isSelected()) {
-            playerThreeName.setEditable(false);
-        } else if (playerFourCheck.isSelected()) {
-            playerFourName.setEditable(false);
-        } else {
-            playerOneName.setEditable(true);
-            playerTwoName.setEditable(true);
-            playerThreeName.setEditable(true);
-            playerFourName.setEditable(true);
+        if (proceedToGameButton.isVisible()) {
+            proceedToGameButton.setVisible(false);
         }
+        playerOneName.setEditable(!playerOneCheck.isSelected());
+        playerTwoName.setEditable(!playerTwoCheck.isSelected());
+        playerThreeName.setEditable(!playerThreeCheck.isSelected());
+        playerFourName.setEditable(!playerFourCheck.isSelected());
+
         switch (playerCount) {
             case 2 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected()) {
@@ -145,28 +139,16 @@ public class PlayerCreationController {
         }
     }
 
-    public void handleCheckOne() {
-        handleChecked(playerOneCheck);
+    public void handlePlayMonopoly() throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
+        Stage window = (Stage) backButton.getScene().getWindow();
+        window.setScene(new Scene(root, 1280, 720));
     }
 
-    public void handleCheckTwo() {
-        handleChecked(playerTwoCheck);
-    }
+    @FXML
+    Button backNameButton;
+    public void handleBackNameButton() {
 
-    public void handleCheckThree() {
-        handleChecked(playerThreeCheck);
-    }
-
-    public void handleCheckFour() {
-        handleChecked(playerFourCheck);
-    }
-
-    public void handleChecked(CheckBox checkbox) {
-        if (checkbox.isSelected()) {
-            checkbox.setSelected(false);
-        }
-        checkbox.setSelected(true);
-        handlePlayerCreation();
     }
 
     public void resetScene() {
@@ -184,7 +166,6 @@ public class PlayerCreationController {
         playerThreeCheck.setVisible(false);
         playerFourName.setVisible(false);
         playerFourCheck.setVisible(false);
-
     }
 
     @FXML
@@ -192,7 +173,6 @@ public class PlayerCreationController {
     @FXML
     Pane playerNamePane;
     public void setPLayerNameScene() {
-        playerCountPane.setDisable(true);
         playerCountPane.setVisible(false);
 
         if (playerCount == 2) {
@@ -200,7 +180,6 @@ public class PlayerCreationController {
             playerOneCheck.setVisible(true);
             playerTwoName.setVisible(true);
             playerTwoCheck.setVisible(true);
-
         } else if (playerCount == 3) {
             playerOneName.setVisible(true);
             playerOneCheck.setVisible(true);
@@ -220,6 +199,7 @@ public class PlayerCreationController {
         }
         playerNamePane.setVisible(true);
         playerNamePane.setDisable(false);
+        nameQuestion.setVisible(true);
         confirmButton.setTooltip(new Tooltip("Proceed to the the world of Monopoly!"));
     }
 }

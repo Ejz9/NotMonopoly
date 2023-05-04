@@ -44,27 +44,32 @@
                   <Font size="30.0" />
                </font>
             </TextField>
-            <CheckBox fx:id="playerOneCheck" layoutX="835.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#handleCheckOne" visible="false">
+            <CheckBox fx:id="playerOneCheck" layoutX="835.0" layoutY="293.0" mnemonicParsing="false" onAction="#handlePlayerCreation" visible="false">
                <font>
                   <Font size="45.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="playerTwoCheck" layoutX="835.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#handleCheckTwo" visible="false">
+            <CheckBox fx:id="playerTwoCheck" layoutX="835.0" layoutY="371.0" mnemonicParsing="false" onAction="#handlePlayerCreation" visible="false">
                <font>
                   <Font size="45.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="playerThreeCheck" layoutX="835.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#handleCheckThree" visible="false">
+            <CheckBox fx:id="playerThreeCheck" layoutX="835.0" layoutY="448.0" mnemonicParsing="false" onAction="#handlePlayerCreation" visible="false">
                <font>
                   <Font size="45.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="playerFourCheck" layoutX="835.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#handleCheckFour" visible="false">
+            <CheckBox fx:id="playerFourCheck" layoutX="835.0" layoutY="529.0" mnemonicParsing="false" onAction="#handlePlayerCreation" visible="false">
                <font>
                   <Font size="45.0" />
                </font>
             </CheckBox>
-            <Button fx:id="proceedToGameButton" layoutX="469.0" layoutY="619.0" mnemonicParsing="false" text="Proceed To Monopoly!" visible="false">
+            <Button fx:id="backNameButton" layoutX="255.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="proceedToGameButton" layoutX="469.0" layoutY="619.0" mnemonicParsing="false" onMouseClicked="#handlePlayMonopoly" text="Proceed To Monopoly!" visible="false">
                <font>
                   <Font size="30.0" />
                </font>
@@ -78,11 +83,6 @@
                   <Font size="60.0" />
                </font>
             </Label>
-            <Button fx:id="backButton" layoutX="251.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleBackButton" text="Back">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
             <Button fx:id="twoPlayerButton" layoutX="409.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleTwoPlayerButton" text="2 Players">
                <font>
                   <Font size="30.0" />
@@ -103,12 +103,17 @@
                   <Font size="30.0" />
                </font>
             </Button>
+            <Button fx:id="cancelButton" layoutX="438.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#handleCancelButton" text="Cancel" visible="false">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="backButton" layoutX="255.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#handleBackButton" text="Back">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
-      <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#handleCancelButton" text="Cancel" visible="false">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
    </children>
 </StackPane>
