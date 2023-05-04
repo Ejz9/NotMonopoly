@@ -1,11 +1,7 @@
 package com.not.monopoly;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import com.not.monopoly.Objects.*;
-import com.not.monopoly.Main.*;
 import javafx.scene.layout.GridPane;
 
 import java.util.HashMap;
@@ -13,6 +9,7 @@ import java.util.Random;
 
 import static com.not.monopoly.Main.*;
 
+@SuppressWarnings("unused")
 public class GameController {
 
 	@FXML
