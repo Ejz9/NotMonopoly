@@ -13,13 +13,14 @@ import java.util.Objects;
 
 public class Main extends Application {
 
-    protected int[] playerPositions;
+    protected static int[] playerPositions;
     protected static int activePlayer = 0;
-    protected int die1;
-    protected int die2;
-    protected int doubleRolls;
-    private Player[] players;
-    private Property[] spaces;
+    protected static int die1;
+    protected static int die2;
+    protected static int doubleRolls;
+    protected static Player[] players;
+    protected static Property[] spaces;
+    protected static int doubleRoll = 0;
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu-screen.fxml")));

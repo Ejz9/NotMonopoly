@@ -5,9 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import com.not.monopoly.Objects.*;
+import com.not.monopoly.Main.*;
+
+import static com.not.monopoly.Main.activePlayer;
 
 public class GameController {
-	public int doubleRoll = 0;
+
+	private Player[] players;
 
 	@FXML
 	ImageView rollButton;
@@ -27,8 +31,16 @@ public class GameController {
 	@FXML
 	ImageView managePropertyButton;
 
-	public void	handleRollButton(){
+	public GameController (){
 
+	}
+
+	public void	handleRollButton(){
+		if (!players[activePlayer].isInJail()){
+
+		} else {
+
+		}
 	}
 
 	public void handleBuyButton() {

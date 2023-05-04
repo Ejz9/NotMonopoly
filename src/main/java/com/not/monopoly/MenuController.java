@@ -25,7 +25,7 @@ public class MenuController {
     @FXML
     ImageView menuButton;
     public void handleMenuButton() {
-    // TODO -
+
     }
 
     @FXML
