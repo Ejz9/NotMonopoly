@@ -22,11 +22,12 @@ public class Main extends Application {
         launch();
     }
 
-    public static void onClickPlay(Stage stage) throws IOException {
+    //OLD (maybe useful) Code
+    /*public static void onClickPlay(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main-board.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setScene(scene);
         stage.show();
-    }
+    }*/
 
 }
