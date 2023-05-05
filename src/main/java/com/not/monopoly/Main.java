@@ -48,7 +48,28 @@ public class Main extends Application {
 		players = new ArrayList<>(playerCount);
 		getPlayerNames(playerCount, players);
 
+		do {
+			if (!players.get(activePlayer).isInJail()) {
 
+			} else {
+
+			}
+
+			for (Player player : players) {
+
+			}
+		} while (isAllOwned() == -1);
+
+
+	}
+
+	protected int isAllOwned(){
+		for (int i = 0; i < players.size(); i++) {
+			if (players.get(i).getProperties().size() == 28){
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	private void getPlayerNames(int playerCount, ArrayList<Player> players) {
