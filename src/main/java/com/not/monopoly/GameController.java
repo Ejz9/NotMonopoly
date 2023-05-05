@@ -111,6 +111,11 @@ public class GameController {
 	}
 	public void handleRoll() {
 		updatePlayerPosition();
+//		switch (players.get(activePlayer).getPosition()) {
+//			case "Property" -> {
+//
+//			}
+//		}
 	}
 	protected void updatePlayerPosition() {
 		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(playerPositions.get(activePlayer)));
