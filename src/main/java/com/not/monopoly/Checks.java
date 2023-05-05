@@ -14,10 +14,4 @@ public class Checks {
         }
         return -1;
     }
-
-    protected static boolean isOnProperty(Player player) {
-        return spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Property") ||
-                spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Railroad") ||
-                spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Utilities");
-    }
 }

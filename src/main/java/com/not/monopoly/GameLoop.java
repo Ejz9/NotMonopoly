@@ -21,9 +21,4 @@ public class GameLoop {
 
 			}
 		} while (isAllOwned() == -1);*/
-
-    protected static void goToJail() {
-        playerPositions.set(activePlayer, 10);
-        players.get(activePlayer).setInJail(true);
-    }
 }

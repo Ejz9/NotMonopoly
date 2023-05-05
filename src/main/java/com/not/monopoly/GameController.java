@@ -16,16 +16,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-import static com.not.monopoly.Checks.isOnProperty;
 import static com.not.monopoly.Main.*;
 import static com.not.monopoly.PlayerCreationController.playerCount;
 
 @SuppressWarnings("unused")
 public class GameController {
 
+	ArrayList<Integer> playerPositions;
 	@FXML
-	public static GridPane gridPane;
-	protected static ArrayList<Integer> playerPositions;
+	public GridPane gridPane;
 	@FXML
 	ImageView rollButton;
 	@FXML
@@ -184,9 +183,9 @@ public class GameController {
 			playerCard.setVisible(true);
 	}
 
-	static HashMap<Integer, ImageView> pieces = new HashMap<>();
-	static HashMap<Integer, Integer> xCoords = new HashMap<>(40);
-	static HashMap<Integer, Integer> yCoords = new HashMap<>(40);
+	HashMap<Integer, ImageView> pieces = new HashMap<>();
+	HashMap<Integer, Integer> xCoords = new HashMap<>(40);
+	HashMap<Integer, Integer> yCoords = new HashMap<>(40);
 
 	// Changes the die values to random between 1 and 6
 
@@ -254,7 +253,7 @@ public class GameController {
 
 
 
-	protected static void initPieceCoords() {
+	protected void initPieceCoords() {
 		xCoords.put(0, 10);
 		xCoords.put(1, 9);
 		xCoords.put(2, 8);
@@ -339,5 +338,15 @@ public class GameController {
 
 	public void setupRoll() {
 
+	}
+
+	protected boolean isOnProperty(Player player) {
+		return spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Property") ||
+				spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Railroad") ||
+				spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Utilities");
+	}
+	protected void goToJail() {
+		playerPositions.set(activePlayer, 10);
+		players.get(activePlayer).setInJail(true);
 	}
 }
