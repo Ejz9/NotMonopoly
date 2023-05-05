@@ -137,7 +137,6 @@ public class PlayerCreationController {
         window.setScene(new Scene(root, 1280, 720));
 
         createPlayerObjects();
-
     }
 
     public void createPlayerObjects() {

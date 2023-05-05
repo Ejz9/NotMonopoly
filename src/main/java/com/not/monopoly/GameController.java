@@ -55,15 +55,12 @@ public class GameController {
 	@FXML
 	Button start;
 	public void initializeGameboard() {
+		runSetup();
 		initPieceCoords();
 		pieces.put(0, player1Piece);
 		pieces.put(1, player2Piece);
 		pieces.put(2, player3Piece);
 		pieces.put(3, player4Piece);
-
-
-
-
 	}
 	@FXML
 	Label playerOneLabel;
@@ -114,11 +111,6 @@ public class GameController {
 	}
 	public void handleRoll() {
 		updatePlayerPosition();
-		switch (players.get(activePlayer).getPosition()) {
-			case "property" -> {
-
-			}
-		}
 	}
 	protected void updatePlayerPosition() {
 		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(playerPositions.get(activePlayer)));
