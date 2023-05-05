@@ -97,12 +97,7 @@ public class GameController {
 	}
 
 	public boolean hasGetOutOfJailCard() {
-		for (Player player : players){
-			if (player.get(activePlayer).getJailCards() > 0){
-				return true;
-			}
-		}
-		return false;
+		return players.get(activePlayer).getJailCards() > 0;
 	}
 
 	public void handleAuctionButton() {
@@ -128,7 +123,7 @@ public class GameController {
 		if (activePlayer >= players.size()) {
 			activePlayer = 0;
 		}
-		if (isOnProperty(players.get(activePlayer)) && spaces[playerPositions.get(activePlayer)].getOwnedBy() != null){
+		if (isOnProperty(players.get(activePlayer)) && spaces[playerPositions.get(activePlayer)].getOwnedBy() != null) {
 			buyButton.setDisable(false);
 			auctionButton.setDisable(false);
 			buyButton.setOpacity(1);
@@ -140,7 +135,7 @@ public class GameController {
 
 	}
 
-	protected static void updatePiece(){
+	protected static void updatePiece() {
 		initPieceCoords();
 		pieces.put(0, player1Piece);
 		pieces.put(1, player2Piece);
@@ -150,7 +145,7 @@ public class GameController {
 		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(playerPositions.get(activePlayer)));
 	}
 
-	private static void	initPieceCoords() {
+	private static void initPieceCoords() {
 		xCoords.put(0, 10);
 		xCoords.put(1, 9);
 		xCoords.put(2, 8);
