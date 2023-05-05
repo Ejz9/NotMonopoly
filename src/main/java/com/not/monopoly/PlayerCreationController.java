@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 import static com.not.monopoly.Main.players;
-import static com.not.monopoly.SetupGameBoard.runSetup;
 
 public class PlayerCreationController {
     protected static int playerCount;

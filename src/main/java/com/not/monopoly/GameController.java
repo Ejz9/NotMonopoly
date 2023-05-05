@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -22,48 +24,47 @@ public class GameController {
 
 	@FXML
 	public static GridPane gridPane;
-
 	@FXML
-	static ImageView rollButton;
-
+	ImageView rollButton;
 	@FXML
-	static ImageView buyButton;
-
+	ImageView buyButton;
 	@FXML
-	static ImageView auctionButton;
-
+	ImageView auctionButton;
 	@FXML
-	static ImageView tradeButton;
-
+	ImageView tradeButton;
 	@FXML
-	static ImageView endTurnButton;
-
+	ImageView endTurnButton;
 	@FXML
-	static ImageView managePropertyButton;
-
+	ImageView managePropertyButton;
 	@FXML
-	static ImageView bailButton;
-
+	ImageView bailButton;
 	@FXML
-	static ImageView getOutOfJailFree;
-
+	ImageView getOutOfJailFree;
 	@FXML
-	static ImageView player1Piece;
-
+	ImageView player1Piece;
 	@FXML
-	static ImageView player2Piece;
-
+	ImageView player2Piece;
 	@FXML
-	static ImageView player3Piece;
-
+	ImageView player3Piece;
 	@FXML
-	static ImageView player4Piece;
+	ImageView player4Piece;
 
 
 	@FXML
 	Pane startPane;
 	@FXML
 	Button start;
+	public void initializeGameboard() {
+		initPieceCoords();
+		pieces.put(0, player1Piece);
+		pieces.put(1, player2Piece);
+		pieces.put(2, player3Piece);
+		pieces.put(3, player4Piece);
+
+
+
+
+	}
 	@FXML
 	Label playerOneLabel;
 	@FXML
@@ -96,6 +97,70 @@ public class GameController {
 	Group playerDataThreeGroup;
 	@FXML
 	Group playerDataFourGroup;
+	@FXML
+	TextArea actionFeed;
+	@FXML
+	TextArea actionLog;
+	Random random = new Random();
+	int roll;
+	public void handleRollButton() {
+		roll = 0;
+		die1 = random.nextInt(1, 6);
+		die2 = random.nextInt(1, 6);
+		rollButton.setDisable(true);
+		rollButton.setOpacity(.3);
+		roll += die1 + die2;
+		handleRoll();
+	}
+	public void handleRoll() {
+		updatePlayerPosition();
+		switch (players.get(activePlayer).getPosition()) {
+			case "property" -> {
+
+			}
+		}
+	}
+	protected void updatePlayerPosition() {
+		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(playerPositions.get(activePlayer)));
+		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(playerPositions.get(activePlayer)));
+	}
+	public void updateActionFeed() {
+		actionFeed.setText(players.get(activePlayer).getName() + " Roll The Dice!");
+	}
+	public void updateActionLog(String action) {
+		switch (action) {
+			case "roll" -> {
+
+			}
+			case "auction" -> {
+
+			}
+			//Append more | Change to If if does not parse string compare.
+			case "endTurn" -> {
+
+			}
+		}
+		actionLog.setText(players.get(activePlayer).getName() + "Rolled");
+	}
+
+
+
+	public void setBuyPhase() {
+
+	}
+
+	public void setJailPhase() {
+
+	}
+
+	public void setPostRollAction() {
+
+	}
+
+	public void handleEndTurn() {
+
+	}
+
 	public void runSetup() {
 		startPane.setVisible(false);
 		startPane.setDisable(true);
@@ -125,17 +190,7 @@ public class GameController {
 	static HashMap<Integer, Integer> yCoords = new HashMap<>(40);
 
 	// Changes the die values to random between 1 and 6
-	public void handleRollButton() {
-		Random random = new Random();
-		die1 = random.nextInt(1, 6);
-		die2 = random.nextInt(1, 6);
-		rollButton.setDisable(true);
-		rollButton.setOpacity(.3);
-		bailButton.setVisible(false);
-		bailButton.setDisable(true);
-		getOutOfJailFree.setVisible(false);
-		getOutOfJailFree.setDisable(true);
-	}
+
 
 	public void handleBuyButton() {
 		players.get(activePlayer).addProperty(spaces[playerPositions.get(activePlayer)]);
@@ -198,17 +253,9 @@ public class GameController {
 
 	}
 
-	protected static void updatePiece() {
-		initPieceCoords();
-		pieces.put(0, player1Piece);
-		pieces.put(1, player2Piece);
-		pieces.put(2, player3Piece);
-		pieces.put(3, player4Piece);
-		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(playerPositions.get(activePlayer)));
-		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(playerPositions.get(activePlayer)));
-	}
 
-	private static void initPieceCoords() {
+
+	protected static void initPieceCoords() {
 		xCoords.put(0, 10);
 		xCoords.put(1, 9);
 		xCoords.put(2, 8);
@@ -289,5 +336,9 @@ public class GameController {
 		yCoords.put(37, 7);
 		yCoords.put(38, 8);
 		yCoords.put(39, 9);
+	}
+
+	public void setupRoll() {
+
 	}
 }
