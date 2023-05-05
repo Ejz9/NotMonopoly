@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class PlayerCreationController {
-    int playerCount;
+    protected static int playerCount;
     @FXML
     Button backButton;
 
