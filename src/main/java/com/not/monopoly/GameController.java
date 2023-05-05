@@ -96,10 +96,6 @@ public class GameController {
 		players.get(activePlayer).setJailCards(players.get(activePlayer).getJailCards() - 1);
 	}
 
-	public boolean hasGetOutOfJailCard() {
-		return players.get(activePlayer).getJailCards() > 0;
-	}
-
 	public void handleAuctionButton() {
 		// TODO - make auction scene to launch auction
 

@@ -2,6 +2,7 @@ package com.not.monopoly.Objects;
 
 import java.util.ArrayList;
 
+
 public class Player {
 	private String name;
 	private int balance;
@@ -66,5 +67,9 @@ public class Player {
 
 	public void setJailCards(int jailCards) {
 		this.jailCards = jailCards;
+	}
+
+	public boolean hasGetOutOfJailCard() {
+		return jailCards > 0;
 	}
 }
