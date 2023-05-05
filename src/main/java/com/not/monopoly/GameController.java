@@ -1,23 +1,23 @@
 package com.not.monopoly;
 
 import com.not.monopoly.Objects.Player;
+import com.not.monopoly.Objects.Property;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Random;
 
 import static com.not.monopoly.Main.*;
 import static com.not.monopoly.PlayerCreationController.playerCount;
+import static com.not.monopoly.SetupGameBoard.createSpaces;
 
 @SuppressWarnings("unused")
 public class GameController {
@@ -54,13 +54,28 @@ public class GameController {
 	Pane startPane;
 	@FXML
 	Button start;
-	public void initializeGameboard() {
+	Property[] spaces = createSpaces();
+	public GameController() throws IOException {
+	}
+
+	public void initializeGameboard() throws IOException {
 		runSetup();
 		initPieceCoords();
 		pieces.put(0, player1Piece);
 		pieces.put(1, player2Piece);
 		pieces.put(2, player3Piece);
 		pieces.put(3, player4Piece);
+		buyButton.setOpacity(.3);
+		buyButton.setDisable(true);
+		auctionButton.setOpacity(.3);
+		auctionButton.setDisable(true);
+		tradeButton.setOpacity(.3);
+		tradeButton.setDisable(true);
+		endTurnButton.setOpacity(.3);
+		endTurnButton.setDisable(true);
+		managePropertyButton.setOpacity(.3);
+		managePropertyButton.setDisable(true);
+
 	}
 	@FXML
 	Label playerOneLabel;
@@ -99,19 +114,44 @@ public class GameController {
 	@FXML
 	TextArea actionLog;
 	Random random = new Random();
-	int roll;
+
+	int doubleRoll;
 	public void handleRollButton() {
-		roll = 0;
 		die1 = random.nextInt(1, 6);
 		die2 = random.nextInt(1, 6);
 		rollButton.setDisable(true);
 		rollButton.setOpacity(.3);
-		roll += die1 + die2;
 		handleRoll();
 	}
 	public void handleRoll() {
-		if (isOnProperty(players.get(activePlayer))) {
-
+		// TODO - Finish fleshing out all use cases
+		if (die1 != die2 && isOnProperty(players.get(activePlayer))) {
+			updatePlayerPosition();
+			if (spaces[players.get(activePlayer).getPosition()].getOwnedBy() == null) {
+				buyButton.setOpacity(1);
+				buyButton.setDisable(false);
+				auctionButton.setOpacity(1);
+				auctionButton.setDisable(false);
+			} else {
+				payRent();
+				endTurnButton.setDisable(false);
+				endTurnButton.setOpacity(1);
+			}
+		} else if (die1 != die2 && !isOnProperty(players.get(activePlayer))){
+			updatePlayerPosition();
+			endTurnButton.setDisable(false);
+			endTurnButton.setOpacity(1);
+		} else if (die1 == die2 && isOnProperty(players.get(activePlayer))) {
+			rollButton.setOpacity(1);
+			rollButton.setDisable(false);
+		} else if (die1 == die2 && !isOnProperty(players.get(activePlayer))) {
+			rollButton.setOpacity(1);
+			rollButton.setDisable(false);
+		} else if (players.get(activePlayer).getPosition() == 30) {
+			updatePlayerPosition();
+			goToJail();
+		} else if (players.get(activePlayer).isInJail() && die1 == die2) {
+			updatePlayerPosition();
 		}
 
 		updatePlayerPosition();
@@ -120,6 +160,13 @@ public class GameController {
 //
 //			}
 //		}
+	}
+
+	protected void handleLandingOnProperty(){
+
+	}
+	protected void payRent(){
+		players.get(activePlayer).setBalance(players.get(activePlayer).getBalance() - spaces[players.get(activePlayer).getPosition()].getActiveRent());
 	}
 	protected void updatePlayerPosition() {
 		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(players.get(activePlayer).getPosition()));
@@ -352,4 +399,6 @@ public class GameController {
 		players.get(activePlayer).setPosition(10);
 		players.get(activePlayer).setInJail(true);
 	}
+
+
 }

@@ -118,27 +118,27 @@
                         <Image url="@../../../images/rollDice.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="buyButton" disable="true" fitHeight="54.0" fitWidth="53.0" onMouseClicked="#handleBuyButton" opacity="0.3" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                  <ImageView fx:id="buyButton" fitHeight="54.0" fitWidth="53.0" onMouseClicked="#handleBuyButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
                      <image>
                         <Image url="@../../../images/buyHouseIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="bailButton" disable="true" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                  <ImageView fx:id="bailButton" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7">
                      <image>
                         <Image url="@../../../images/bailOutButton.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="auctionButton" disable="true" fitHeight="61.0" fitWidth="77.0" onMouseClicked="#handleAuctionButton" opacity="0.3" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+                  <ImageView fx:id="auctionButton" fitHeight="61.0" fitWidth="77.0" onMouseClicked="#handleAuctionButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="6">
                      <image>
                         <Image url="@../../../images/auctionIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="getOutOfJailFree" disable="true" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                  <ImageView fx:id="getOutOfJailFree" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
                      <image>
                         <Image url="@../../../propertyImages/getOutOfJail.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="tradeButton" disable="true" fitHeight="58.0" fitWidth="58.0" onMouseClicked="#handleTradeButton" opacity="0.3" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                  <ImageView fx:id="tradeButton" fitHeight="58.0" fitWidth="58.0" onMouseClicked="#handleTradeButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
                      <image>
                         <Image url="@../../../images/tradeButton.png" />
                      </image>
@@ -148,7 +148,7 @@
                         <Image url="@../../../images/endTurn.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="managePropertyButton" disable="true" fitHeight="130.0" fitWidth="176.0" onMouseClicked="#handlePropertyButton" opacity="0.3" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="managePropertyButton" fitHeight="130.0" fitWidth="176.0" onMouseClicked="#handlePropertyButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../../images/propertyManagement.png" />
                      </image>

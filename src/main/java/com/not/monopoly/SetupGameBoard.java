@@ -11,20 +11,10 @@ import java.io.IOException;
 import java.util.List;
 
 import static com.not.monopoly.GameController.*;
+import static com.not.monopoly.Main.activePlayer;
 import static com.not.monopoly.Main.players;
 
 public class SetupGameBoard {
-    public static void runSetup() throws IOException {
-        // Creates space data from file
-        try {
-            createSpaces();
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
-        }
-
-
-
-    }
     private static final String PROPERTY_VALUES = "src/main/resources/data/PropertyValues";
     private static final String COORDINATES = "src/main/resources/data/coordinates_xy";
     protected static Property[] createSpaces() throws IOException {
@@ -156,10 +146,8 @@ public class SetupGameBoard {
     }
 
     protected static void setupPlayerCards(Label playerNameLabel, Label playerBalanceLabel, ImageView playerCard) {
-        for (Player player : players) {
-            playerNameLabel.setText(player.getName());
-            playerBalanceLabel.setText(player.getBalanceAsString());
+            playerNameLabel.setText(players.get(activePlayer).getName());
+            playerBalanceLabel.setText(players.get(activePlayer).getBalanceAsString());
             playerCard.setVisible(true);
-        }
     }
 }

@@ -18,10 +18,7 @@ public class Main extends Application {
 	protected static int activePlayer = 0;
 	protected static int die1;
 	protected static int die2;
-	protected static int doubleRolls;
 	protected static List<Player> players = new ArrayList<>();
-	protected static Property[] spaces;
-	protected static int doubleRoll = 0;
 
 
 	@Override
@@ -30,6 +27,7 @@ public class Main extends Application {
 		primaryStage.setTitle("Monopoly Game");
 		primaryStage.setScene(new Scene(root, 1280, 720));
 		primaryStage.show();
+
 	}
 
 	public static void main(String[] args) {
