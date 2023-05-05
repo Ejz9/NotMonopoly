@@ -13,6 +13,10 @@ import java.util.Objects;
 
 public class PlayerCreationController {
     protected static int playerCount;
+    String playerOne;
+    String playerTwo;
+    String playerThree;
+    String playerFour;
     @FXML
     Button backButton;
 
@@ -59,25 +63,17 @@ public class PlayerCreationController {
     @FXML
     CheckBox playerOneCheck;
     @FXML
-    String playerOne;
-    @FXML
     TextField playerTwoName;
     @FXML
     CheckBox playerTwoCheck;
-    @FXML
-    String playerTwo;
     @FXML
     TextField playerThreeName;
     @FXML
     CheckBox playerThreeCheck;
     @FXML
-    String playerThree;
-    @FXML
     TextField playerFourName;
     @FXML
     CheckBox playerFourCheck;
-    @FXML
-    String playerFour;
     @FXML
     Label countQuestion;
     @FXML
@@ -115,25 +111,25 @@ public class PlayerCreationController {
             case 2 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = String.valueOf(playerOneName);
-                    playerTwo = String.valueOf(playerTwoName);
+                    playerOne = playerOneName.getText();
+                    playerTwo = playerTwoName.getText();
                 }
             }
             case 3 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected() && playerThreeCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = String.valueOf(playerOneName);
-                    playerTwo = String.valueOf(playerTwoName);
-                    playerThree = String.valueOf(playerThreeName);
+                    playerOne = playerOneName.getText();
+                    playerTwo = playerTwoName.getText();
+                    playerThree = playerThreeName.getText();
                 }
             }
             case 4 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected() && playerThreeCheck.isSelected() && playerFourCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = String.valueOf(playerOneName);
-                    playerTwo = String.valueOf(playerTwoName);
-                    playerThree = String.valueOf(playerThreeName);
-                    playerFour = String.valueOf(playerFourName);
+                    playerOne = playerOneName.getText();
+                    playerTwo = playerTwoName.getText();
+                    playerThree = playerThreeName.getText();
+                    playerFour = playerFourName.getText();
                 }
             }
         }
