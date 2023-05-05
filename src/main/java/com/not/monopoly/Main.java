@@ -1,6 +1,6 @@
 package com.not.monopoly;
 
-import com.not.monopoly.Objects.*;
+import com.not.monopoly.Objects.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.not.monopoly.Objects.*;
 
 public class Main extends Application {
 	protected static int activePlayer = 0;

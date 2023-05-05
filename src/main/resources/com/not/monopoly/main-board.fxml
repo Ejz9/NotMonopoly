@@ -184,7 +184,7 @@
                   <Image url="@../../../menuImages/blackImage.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="start" layoutX="572.0" layoutY="325.0" mnemonicParsing="false" onAction="#initializeGameboard" text="Start">
+            <Button fx:id="start" layoutX="572.0" layoutY="325.0" mnemonicParsing="false" onAction="#initGameboard" text="Start">
                <font>
                   <Font size="40.0" />
                </font>

@@ -53,28 +53,7 @@ public class GameController {
 	@FXML
 	Button start;
 	Property[] spaces = createSpaces();
-	public GameController() throws IOException {
-	}
 
-	public void initializeGameboard() throws IOException {
-		runSetup();
-		initPieceCoords();
-		pieces.put(0, player1Piece);
-		pieces.put(1, player2Piece);
-		pieces.put(2, player3Piece);
-		pieces.put(3, player4Piece);
-		buyButton.setOpacity(.3);
-		buyButton.setDisable(true);
-		auctionButton.setOpacity(.3);
-		auctionButton.setDisable(true);
-		tradeButton.setOpacity(.3);
-		tradeButton.setDisable(true);
-		endTurnButton.setOpacity(.3);
-		endTurnButton.setDisable(true);
-		managePropertyButton.setOpacity(.3);
-		managePropertyButton.setDisable(true);
-
-	}
 	@FXML
 	Label playerOneLabel;
 	@FXML
@@ -111,17 +90,34 @@ public class GameController {
 	TextArea actionFeed;
 	@FXML
 	TextArea actionLog;
-	public void initializeGameboard() {
+	Random random = new Random();
+	int doubleRoll;
+	public GameController() throws IOException {
+	}
+
+	public void initGameboard() {
 		runSetup();
 		initPieceCoords();
 		pieces.put(0, player1Piece);
 		pieces.put(1, player2Piece);
 		pieces.put(2, player3Piece);
 		pieces.put(3, player4Piece);
-	}
-	Random random = new Random();
+		buyButton.setOpacity(.3);
+		buyButton.setDisable(true);
+		auctionButton.setOpacity(.3);
+		auctionButton.setDisable(true);
+		tradeButton.setOpacity(.3);
+		tradeButton.setDisable(true);
+		endTurnButton.setOpacity(.3);
+		endTurnButton.setDisable(true);
+		managePropertyButton.setOpacity(.3);
+		managePropertyButton.setDisable(true);
+		bailButton.setVisible(false);
+		bailButton.setDisable(true);
+		getOutOfJailFree.setVisible(false);
+		getOutOfJailFree.setDisable(true);
 
-	int doubleRoll;
+	}
 	public void handleRollButton() {
 		die1 = random.nextInt(1, 6);
 		die2 = random.nextInt(1, 6);
@@ -129,6 +125,7 @@ public class GameController {
 		rollButton.setOpacity(.3);
 		handleRoll();
 	}
+
 	public void handleRoll() {
 		// TODO - Finish fleshing out all use cases
 		if (die1 != die2 && isOnProperty(players.get(activePlayer))) {
@@ -148,9 +145,11 @@ public class GameController {
 			endTurnButton.setDisable(false);
 			endTurnButton.setOpacity(1);
 		} else if (die1 == die2 && isOnProperty(players.get(activePlayer))) {
+			updatePlayerPosition();
 			rollButton.setOpacity(1);
 			rollButton.setDisable(false);
 		} else if (die1 == die2 && !isOnProperty(players.get(activePlayer))) {
+			updatePlayerPosition();
 			rollButton.setOpacity(1);
 			rollButton.setDisable(false);
 		} else if (players.get(activePlayer).getPosition() == 30) {
@@ -171,16 +170,20 @@ public class GameController {
 	protected void handleLandingOnProperty(){
 
 	}
+
 	protected void payRent(){
 		players.get(activePlayer).setBalance(players.get(activePlayer).getBalance() - spaces[players.get(activePlayer).getPosition()].getActiveRent());
 	}
+
 	protected void updatePlayerPosition() {
 		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(players.get(activePlayer).getPosition()));
 		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(players.get(activePlayer).getPosition()));
 	}
+
 	public void updateActionFeed() {
 		actionFeed.setText(players.get(activePlayer).getName() + " Roll The Dice!");
 	}
+
 	public void updateActionLog(String action) {
 		switch (action) {
 			case "roll" -> {
