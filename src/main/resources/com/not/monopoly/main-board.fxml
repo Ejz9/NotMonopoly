@@ -118,7 +118,7 @@
       </Pane>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Group layoutX="376.0" layoutY="492.0">
+            <Group fx:id="playerDataOneGroup" layoutX="376.0" layoutY="492.0">
                <children>
                   <ImageView fx:id="playerOneCard" fitHeight="119.0" fitWidth="120.0" layoutX="3.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -129,7 +129,7 @@
                   <Label fx:id="playerOneBalanceLabel" layoutX="38.0" layoutY="42.0" text="Balance1" />
                </children>
             </Group>
-            <Group layoutX="491.0" layoutY="507.0">
+            <Group fx:id="playerDataTwoGroup" layoutX="491.0" layoutY="507.0">
                <children>
                   <ImageView fx:id="playerTwoCard" fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -140,7 +140,7 @@
                   <Label fx:id="playerTwoBalanceLabel" layoutX="36.0" layoutY="27.0" text="Balance2" />
                </children>
             </Group>
-            <Group layoutX="669.0" layoutY="507.0">
+            <Group fx:id="playerDataThreeGroup" layoutX="669.0" layoutY="507.0" visible="false">
                <children>
                   <ImageView fx:id="playerThreeCard" fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -151,7 +151,7 @@
                   <Label fx:id="playerThreeBalanceLabel" layoutX="40.0" layoutY="27.0" text="Balance3" />
                </children>
             </Group>
-            <Group>
+            <Group fx:id="playerDataFourGroup" visible="false">
                <children>
                   <ImageView fx:id="playerFourCard" fitHeight="119.0" fitWidth="120.0" layoutX="781.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
                      <image>

@@ -2,6 +2,7 @@ package com.not.monopoly;
 
 import com.not.monopoly.Objects.Player;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -79,6 +80,14 @@ public class GameController {
 	static Label playerFourBalanceLabel;
 	@FXML
 	static ImageView playerFourCard;
+	@FXML
+	static Group playerDataOneGroup;
+	@FXML
+	static Group playerDataTwoGroup;
+	@FXML
+	static Group playerDataThreeGroup;
+	@FXML
+	static Group playerDataFourGroup;
 
 	static HashMap<Integer, ImageView> pieces = new HashMap<>();
 	static HashMap<Integer, Integer> xCoords = new HashMap<>(40);

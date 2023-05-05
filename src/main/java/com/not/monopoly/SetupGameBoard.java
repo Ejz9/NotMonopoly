@@ -19,20 +19,17 @@ public class SetupGameBoard {
         setupPlayerCards(playerTwoLabel, playerTwoBalanceLabel, playerTwoCard);
         if (players.size() == 3) {
             setupPlayerCards(playerThreeLabel, playerThreeBalanceLabel, playerThreeCard);
+            playerDataThreeGroup.setVisible(true);
         }
         if (players.size() == 4) {
             setupPlayerCards(playerFourLabel, playerFourBalanceLabel, playerFourCard);
-        }
+            playerDataFourGroup.setVisible(true);        }
         // Creates space data from file
         try {
             createSpaces();
         } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }
-
-
-
-
 
     }
     private static final String PROPERTY_VALUES = "src/main/resources/data/PropertyValues";
