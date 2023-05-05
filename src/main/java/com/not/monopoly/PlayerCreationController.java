@@ -1,5 +1,6 @@
 package com.not.monopoly;
 
+import com.not.monopoly.Objects.Player;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,14 +10,13 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
+
+import static com.not.monopoly.Main.players;
 
 public class PlayerCreationController {
     protected static int playerCount;
-    String playerOne;
-    String playerTwo;
-    String playerThree;
-    String playerFour;
     @FXML
     Button backButton;
 
@@ -86,6 +86,7 @@ public class PlayerCreationController {
         } else if (fourPlayerButton.isDisabled()) {
             playerCount = 4;
         }
+        players = new ArrayList<>();
         setPLayerNameScene();
     }
 
@@ -111,25 +112,25 @@ public class PlayerCreationController {
             case 2 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = playerOneName.getText();
-                    playerTwo = playerTwoName.getText();
+                    players.add(new Player(playerOneName.getText()));
+                    players.add(new Player(playerTwoName.getText()));
                 }
             }
             case 3 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected() && playerThreeCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = playerOneName.getText();
-                    playerTwo = playerTwoName.getText();
-                    playerThree = playerThreeName.getText();
+                    players.add(new Player(playerOneName.getText()));
+                    players.add(new Player(playerTwoName.getText()));
+                    players.add(new Player(playerThreeName.getText()));
                 }
             }
             case 4 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected() && playerThreeCheck.isSelected() && playerFourCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = playerOneName.getText();
-                    playerTwo = playerTwoName.getText();
-                    playerThree = playerThreeName.getText();
-                    playerFour = playerFourName.getText();
+                    players.add(new Player(playerOneName.getText()));
+                    players.add(new Player(playerTwoName.getText()));
+                    players.add(new Player(playerThreeName.getText()));
+                    players.add(new Player(playerFourName.getText()));
                 }
             }
         }

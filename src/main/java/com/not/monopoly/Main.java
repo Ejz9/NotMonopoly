@@ -51,7 +51,7 @@ public class Main extends Application {
 
 		do {
 			if (players.get(activePlayer).isInJail()) {
-				roll
+
 			} else {
 
 			}
@@ -71,6 +71,7 @@ public class Main extends Application {
 	}
 
 	private void getPlayerNames(int playerCount, ArrayList<Player> players) {
+
 	}
 
 	// TODO - make player property squares empty with black outline
