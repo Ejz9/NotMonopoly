@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.GameController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.GameController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,6 +27,64 @@
                   <Image url="@../../../images/monopoly_board.png" />
                </image>
             </ImageView>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Group fx:id="playerDataOneGroup" layoutX="376.0" layoutY="492.0">
+                     <children>
+                        <ImageView fx:id="playerOneCard" fitHeight="119.0" fitWidth="120.0" layoutX="3.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../propertyImages/playerCard2.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="playerOneLabel" layoutX="6.0" layoutY="21.0" prefHeight="17.0" prefWidth="120.0" textFill="WHITE" />
+                        <Label fx:id="playerOneBalanceLabel" layoutX="38.0" layoutY="42.0" />
+                     </children>
+                  </Group>
+                  <Group fx:id="playerDataTwoGroup" layoutX="491.0" layoutY="507.0">
+                     <children>
+                        <ImageView fx:id="playerTwoCard" fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../propertyImages/playerCard2.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="playerTwoLabel" layoutX="4.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Player2" textFill="WHITE" />
+                        <Label fx:id="playerTwoBalanceLabel" layoutX="36.0" layoutY="27.0" text="Balance2" />
+                     </children>
+                  </Group>
+                  <Group fx:id="playerDataThreeGroup" layoutX="669.0" layoutY="507.0" visible="false">
+                     <children>
+                        <ImageView fx:id="playerThreeCard" fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../propertyImages/playerCard2.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="playerThreeLabel" layoutX="4.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Player3" textFill="WHITE" />
+                        <Label fx:id="playerThreeBalanceLabel" layoutX="40.0" layoutY="27.0" text="Balance3" />
+                     </children>
+                  </Group>
+                  <Group fx:id="playerDataFourGroup" visible="false">
+                     <children>
+                        <ImageView fx:id="playerFourCard" fitHeight="119.0" fitWidth="120.0" layoutX="781.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../propertyImages/playerCard2.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="playerFourLabel" layoutX="784.0" layoutY="513.0" prefHeight="17.0" prefWidth="115.0" text="Player4" textFill="WHITE" />
+                        <Label fx:id="playerFourBalanceLabel" layoutX="818.0" layoutY="534.0" text="Balance4" />
+                     </children>
+                  </Group>
+                  <TextArea fx:id="actionFeed" blendMode="SOFT_LIGHT" editable="false" prefHeight="156.0" prefWidth="280.0" promptText="ActionFeed" text="Player 1 please roll the dice">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea fx:id="actionLog" blendMode="SOFT_LIGHT" editable="false" layoutX="1000.0" prefHeight="156.0" prefWidth="280.0" promptText="ActionLog">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </Pane>
             <GridPane fx:id="gridPane" layoutX="280.0" prefHeight="720.0" prefWidth="720.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="97.0" />
@@ -110,64 +175,6 @@
                   </ImageView>
                </children>
             </GridPane>
-         </children>
-      </Pane>
-      <Pane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Group fx:id="playerDataOneGroup" layoutX="376.0" layoutY="492.0">
-               <children>
-                  <ImageView fx:id="playerOneCard" fitHeight="119.0" fitWidth="120.0" layoutX="3.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../propertyImages/playerCard2.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="playerOneLabel" layoutX="6.0" layoutY="21.0" prefHeight="17.0" prefWidth="120.0" textFill="WHITE" />
-                  <Label fx:id="playerOneBalanceLabel" layoutX="38.0" layoutY="42.0" />
-               </children>
-            </Group>
-            <Group fx:id="playerDataTwoGroup" layoutX="491.0" layoutY="507.0">
-               <children>
-                  <ImageView fx:id="playerTwoCard" fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../propertyImages/playerCard2.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="playerTwoLabel" layoutX="4.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Player2" textFill="WHITE" />
-                  <Label fx:id="playerTwoBalanceLabel" layoutX="36.0" layoutY="27.0" text="Balance2" />
-               </children>
-            </Group>
-            <Group fx:id="playerDataThreeGroup" layoutX="669.0" layoutY="507.0" visible="false">
-               <children>
-                  <ImageView fx:id="playerThreeCard" fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../propertyImages/playerCard2.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="playerThreeLabel" layoutX="4.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Player3" textFill="WHITE" />
-                  <Label fx:id="playerThreeBalanceLabel" layoutX="40.0" layoutY="27.0" text="Balance3" />
-               </children>
-            </Group>
-            <Group fx:id="playerDataFourGroup" visible="false">
-               <children>
-                  <ImageView fx:id="playerFourCard" fitHeight="119.0" fitWidth="120.0" layoutX="781.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../propertyImages/playerCard2.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="playerFourLabel" layoutX="784.0" layoutY="513.0" prefHeight="17.0" prefWidth="115.0" text="Player4" textFill="WHITE" />
-                  <Label fx:id="playerFourBalanceLabel" layoutX="818.0" layoutY="534.0" text="Balance4" />
-               </children>
-            </Group>
-            <TextArea fx:id="actionFeed" blendMode="SOFT_LIGHT" editable="false" prefHeight="156.0" prefWidth="280.0" promptText="ActionFeed" text="Player 1 please roll the dice">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextArea>
-            <TextArea fx:id="actionLog" blendMode="SOFT_LIGHT" editable="false" layoutX="1000.0" prefHeight="156.0" prefWidth="280.0" promptText="ActionLog">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextArea>
          </children>
       </Pane>
       <Pane fx:id="startPane" prefHeight="200.0" prefWidth="200.0">
