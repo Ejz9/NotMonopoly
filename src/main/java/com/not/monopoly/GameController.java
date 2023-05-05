@@ -118,54 +118,7 @@ public class GameController {
 		getOutOfJailFree.setDisable(true);
 
 	}
-	public void handleRollButton() {
-		die1 = random.nextInt(1, 6);
-		die2 = random.nextInt(1, 6);
-		rollButton.setDisable(true);
-		rollButton.setOpacity(.3);
-		handleRoll();
-	}
 
-	public void handleRoll() {
-		// TODO - Finish fleshing out all use cases
-		if (die1 != die2 && isOnProperty(players.get(activePlayer))) {
-			updatePlayerPosition();
-			if (spaces[players.get(activePlayer).getPosition()].getOwnedBy() == null) {
-				buyButton.setOpacity(1);
-				buyButton.setDisable(false);
-				auctionButton.setOpacity(1);
-				auctionButton.setDisable(false);
-			} else {
-				payRent();
-				endTurnButton.setDisable(false);
-				endTurnButton.setOpacity(1);
-			}
-		} else if (die1 != die2 && !isOnProperty(players.get(activePlayer))){
-			updatePlayerPosition();
-			endTurnButton.setDisable(false);
-			endTurnButton.setOpacity(1);
-		} else if (die1 == die2 && isOnProperty(players.get(activePlayer))) {
-			updatePlayerPosition();
-			rollButton.setOpacity(1);
-			rollButton.setDisable(false);
-		} else if (die1 == die2 && !isOnProperty(players.get(activePlayer))) {
-			updatePlayerPosition();
-			rollButton.setOpacity(1);
-			rollButton.setDisable(false);
-		} else if (players.get(activePlayer).getPosition() == 30) {
-			updatePlayerPosition();
-			goToJail();
-		} else if (players.get(activePlayer).isInJail() && die1 == die2) {
-			updatePlayerPosition();
-		}
-
-		updatePlayerPosition();
-//		switch (players.get(activePlayer).getPosition()) {
-//			case "Property" -> {
-//
-//			}
-//		}
-	}
 
 	protected void handleLandingOnProperty(){
 
@@ -176,6 +129,8 @@ public class GameController {
 	}
 
 	protected void updatePlayerPosition() {
+		players.get(activePlayer).setPosition(players.get(activePlayer).getPosition() + die1 + die2);
+		System.out.println(spaces[players.get(activePlayer).getPosition()].getName());
 		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(players.get(activePlayer).getPosition()));
 		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(players.get(activePlayer).getPosition()));
 	}
@@ -247,7 +202,49 @@ public class GameController {
 	HashMap<Integer, Integer> yCoords = new HashMap<>(40);
 
 	// Changes the die values to random between 1 and 6
+	public void handleRollButton() {
+		die1 = random.nextInt(1, 6);
+		die2 = random.nextInt(1, 6);
+		rollButton.setDisable(true);
+		rollButton.setOpacity(.3);
+		handleRoll();
+	}
 
+	public void handleRoll() {
+		// TODO - Finish fleshing out all use cases
+		if (die1 != die2 && isOnProperty(players.get(activePlayer))) {
+			updatePlayerPosition();
+			if (spaces[players.get(activePlayer).getPosition()].getOwnedBy() == null) {
+				buyButton.setOpacity(1);
+				buyButton.setDisable(false);
+				auctionButton.setOpacity(1);
+				auctionButton.setDisable(false);
+			} else {
+				payRent();
+				endTurnButton.setDisable(false);
+				endTurnButton.setOpacity(1);
+			}
+		} else if (die1 != die2 && !isOnProperty(players.get(activePlayer))){
+			updatePlayerPosition();
+			endTurnButton.setDisable(false);
+			endTurnButton.setOpacity(1);
+		} else if (die1 == die2 && isOnProperty(players.get(activePlayer))) {
+			updatePlayerPosition();
+			rollButton.setOpacity(1);
+			rollButton.setDisable(false);
+		} else if (die1 == die2 && !isOnProperty(players.get(activePlayer))) {
+			updatePlayerPosition();
+			rollButton.setOpacity(1);
+			rollButton.setDisable(false);
+		} else if (players.get(activePlayer).getPosition() == 30) {
+			updatePlayerPosition();
+			goToJail();
+		} else if (players.get(activePlayer).isInJail() && die1 == die2) {
+			updatePlayerPosition();
+		}
+
+
+	}
 
 	public void handleBuyButton() {
 		players.get(activePlayer).addProperty(spaces[players.get(activePlayer).getPosition()]);
@@ -256,6 +253,13 @@ public class GameController {
 		auctionButton.setDisable(true);
 		buyButton.setOpacity(.3);
 		auctionButton.setOpacity(.3);
+		if (die1 == die2){
+			rollButton.setDisable(false);
+			rollButton.setOpacity(1);
+		} else {
+			endTurnButton.setDisable(false);
+			endTurnButton.setOpacity(1);
+		}
 	}
 
 	public void handleBailButton() {
@@ -277,12 +281,17 @@ public class GameController {
 
 	public void handleAuctionButton() {
 		// TODO - make auction scene to launch auction
-
-
 		buyButton.setDisable(true);
 		auctionButton.setDisable(true);
 		buyButton.setOpacity(.3);
 		auctionButton.setOpacity(.3);
+		if (die1 == die2){
+			rollButton.setDisable(false);
+			rollButton.setOpacity(1);
+		} else {
+			endTurnButton.setDisable(false);
+			endTurnButton.setOpacity(1);
+		}
 	}
 
 	public void handleTradeButton() {
