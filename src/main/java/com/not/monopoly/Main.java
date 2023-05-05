@@ -44,15 +44,15 @@ public class Main extends Application {
 			throw new RuntimeException(e);
 		}
 
-		// Set up player count and data
-		players = new ArrayList<>(playerCount);
-		getPlayerNames(playerCount, players);
-
-
 		do {
-			if (players.get(activePlayer).isInJail()) {
+			if (players.get(activePlayer).isInJail() && die1 == die2) {
+				players.get(activePlayer).setPosition(players.get(activePlayer).getPosition() + die1 + die2);
+				GameController.updatePiece();
+			} else if (players.get(activePlayer).isInJail() && die1 != die2) {
+
 
 			} else {
+
 
 			}
 
@@ -68,10 +68,6 @@ public class Main extends Application {
 			}
 		}
 		return -1;
-	}
-
-	private void getPlayerNames(int playerCount, ArrayList<Player> players) {
-
 	}
 
 	// TODO - make player property squares empty with black outline
