@@ -13,6 +13,10 @@ import java.util.Objects;
 
 public class PlayerCreationController {
     protected static int playerCount;
+    String playerOne;
+    String playerTwo;
+    String playerThree;
+    String playerFour;
     @FXML
     Button backButton;
 
@@ -59,25 +63,17 @@ public class PlayerCreationController {
     @FXML
     CheckBox playerOneCheck;
     @FXML
-    String playerOne;
-    @FXML
     TextField playerTwoName;
     @FXML
     CheckBox playerTwoCheck;
-    @FXML
-    String playerTwo;
     @FXML
     TextField playerThreeName;
     @FXML
     CheckBox playerThreeCheck;
     @FXML
-    String playerThree;
-    @FXML
     TextField playerFourName;
     @FXML
     CheckBox playerFourCheck;
-    @FXML
-    String playerFour;
     @FXML
     Label countQuestion;
     @FXML
