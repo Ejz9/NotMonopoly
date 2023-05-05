@@ -120,46 +120,46 @@
          <children>
             <Group layoutX="376.0" layoutY="492.0">
                <children>
-                  <ImageView fitHeight="119.0" fitWidth="120.0" layoutX="3.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerOneCard" fitHeight="119.0" fitWidth="120.0" layoutX="3.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../propertyImages/playerCard2.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="6.0" layoutY="21.0" prefHeight="17.0" prefWidth="120.0" text="Player1" textFill="WHITE" />
-                  <Label layoutX="38.0" layoutY="42.0" text="Balance1" />
+                  <Label fx:id="playerOneLabel" layoutX="6.0" layoutY="21.0" prefHeight="17.0" prefWidth="120.0" text="Player1" textFill="WHITE" />
+                  <Label fx:id="playerOneBalanceLabel" layoutX="38.0" layoutY="42.0" text="Balance1" />
                </children>
             </Group>
             <Group layoutX="491.0" layoutY="507.0">
                <children>
-                  <ImageView fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerTwoCard" fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../propertyImages/playerCard2.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="4.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Player2" textFill="WHITE" />
-                  <Label layoutX="36.0" layoutY="27.0" text="Balance2" />
+                  <Label fx:id="playerTwoLabel" layoutX="4.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Player2" textFill="WHITE" />
+                  <Label fx:id="playerTwoBalanceLabel" layoutX="36.0" layoutY="27.0" text="Balance2" />
                </children>
             </Group>
             <Group layoutX="669.0" layoutY="507.0">
                <children>
-                  <ImageView fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerThreeCard" fitHeight="119.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../propertyImages/playerCard2.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="4.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Player3" textFill="WHITE" />
-                  <Label layoutX="40.0" layoutY="27.0" text="Balance3" />
+                  <Label fx:id="playerThreeLabel" layoutX="4.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Player3" textFill="WHITE" />
+                  <Label fx:id="playerThreeBalanceLabel" layoutX="40.0" layoutY="27.0" text="Balance3" />
                </children>
             </Group>
             <Group>
                <children>
-                  <ImageView fitHeight="119.0" fitWidth="120.0" layoutX="781.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerFourCard" fitHeight="119.0" fitWidth="120.0" layoutX="781.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../propertyImages/playerCard2.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="784.0" layoutY="513.0" prefHeight="17.0" prefWidth="115.0" text="Player4" textFill="WHITE" />
-                  <Label layoutX="818.0" layoutY="534.0" text="Balance4" />
+                  <Label fx:id="playerFourLabel" layoutX="784.0" layoutY="513.0" prefHeight="17.0" prefWidth="115.0" text="Player4" textFill="WHITE" />
+                  <Label fx:id="playerFourBalanceLabel" layoutX="818.0" layoutY="534.0" text="Balance4" />
                </children>
             </Group>
          </children>

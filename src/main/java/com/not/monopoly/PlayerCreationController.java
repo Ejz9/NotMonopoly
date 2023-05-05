@@ -6,20 +6,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Objects;
 
 import static com.not.monopoly.Main.players;
 
 public class PlayerCreationController {
     protected static int playerCount;
+
     @FXML
     Button backButton;
-
     public void handleBackButton() throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu-screen.fxml")));
         Stage window = (Stage) backButton.getScene().getWindow();
@@ -86,12 +86,13 @@ public class PlayerCreationController {
         } else if (fourPlayerButton.isDisabled()) {
             playerCount = 4;
         }
-        players = new ArrayList<>();
         setPLayerNameScene();
     }
 
     @FXML
     Button cancelButton;
+    @FXML
+    Button backNameButton;
     public void handleCancelButton() {
         playerCount = 0;
         resetScene();
@@ -140,13 +141,10 @@ public class PlayerCreationController {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
         Stage window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 1280, 720));
+
+        SetupGameBoard.runSetup();
     }
 
-    @FXML
-    Button backNameButton;
-    public void handleBackNameButton() {
-
-    }
 
     public void resetScene() {
         twoPlayerButton.setDisable(false);

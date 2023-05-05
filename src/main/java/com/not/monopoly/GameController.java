@@ -10,6 +10,7 @@ import java.io.ObjectInputStream;
 import java.util.HashMap;
 import java.util.Random;
 
+import static com.not.monopoly.Checks.isOnProperty;
 import static com.not.monopoly.Main.*;
 
 @SuppressWarnings("unused")
@@ -53,6 +54,31 @@ public class GameController {
 
 	@FXML
 	static ImageView player4Piece;
+
+	@FXML
+	static Label playerOneLabel;
+	@FXML
+	static Label playerOneBalanceLabel;
+	@FXML
+	static ImageView playerOneCard;
+	@FXML
+	static Label playerTwoLabel;
+	@FXML
+	static Label playerTwoBalanceLabel;
+	@FXML
+	static ImageView playerTwoCard;
+	@FXML
+	static Label playerThreeLabel;
+	@FXML
+	static Label playerThreeBalanceLabel;
+	@FXML
+	static ImageView playerThreeCard;
+	@FXML
+	static Label playerFourLabel;
+	@FXML
+	static Label playerFourBalanceLabel;
+	@FXML
+	static ImageView playerFourCard;
 
 	static HashMap<Integer, ImageView> pieces = new HashMap<>();
 	static HashMap<Integer, Integer> xCoords = new HashMap<>(40);

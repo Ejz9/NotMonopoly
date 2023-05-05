@@ -25,6 +25,10 @@ public class Player {
 		return balance;
 	}
 
+	public String getBalanceAsString() {
+		return String.valueOf(balance);
+	}
+
 	public ArrayList<Property> getProperties() {
 		return properties;
 	}

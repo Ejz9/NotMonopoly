@@ -1,13 +1,40 @@
 package com.not.monopoly;
 
 import com.not.monopoly.Objects.*;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class HandleSpaces {
+import static com.not.monopoly.GameController.*;
+import static com.not.monopoly.Main.players;
+
+public class SetupGameBoard {
+    public static void runSetup() throws IOException {
+        //Prepares and Establishes the Player Cards
+        setupPlayerCards(playerOneLabel, playerOneBalanceLabel, playerOneCard);
+        setupPlayerCards(playerTwoLabel, playerTwoBalanceLabel, playerTwoCard);
+        if (players.size() == 3) {
+            setupPlayerCards(playerThreeLabel, playerThreeBalanceLabel, playerThreeCard);
+        }
+        if (players.size() == 4) {
+            setupPlayerCards(playerFourLabel, playerFourBalanceLabel, playerFourCard);
+        }
+        // Creates space data from file
+        try {
+            createSpaces();
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+
+
+    }
     private static final String PROPERTY_VALUES = "src/main/resources/data/PropertyValues";
     private static final String COORDINATES = "src/main/resources/data/coordinates_xy";
     protected static Property[] createSpaces() throws IOException {
@@ -136,5 +163,13 @@ public class HandleSpaces {
 			}*/
         }
         return spaces;
+    }
+
+    protected static void setupPlayerCards(Label playerNameLabel, Label playerBalanceLabel, ImageView playerCard) {
+        for (Player player : players) {
+            playerNameLabel.setText(player.getName());
+            playerBalanceLabel.setText(player.getBalanceAsString());
+            playerCard.setVisible(true);
+        }
     }
 }
