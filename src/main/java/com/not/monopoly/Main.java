@@ -45,7 +45,10 @@ public class Main extends Application {
 		}
 
 		do {
-			if (players.get(activePlayer).isInJail() && die1 == die2) {
+			if (players.get(activePlayer).isInJail()) {
+				GameController.rollButton.setOpacity(1);
+				GameController.rollButton.setDisable(false);
+
 				players.get(activePlayer).setPosition(players.get(activePlayer).getPosition() + die1 + die2);
 				GameController.updatePiece();
 			} else if (players.get(activePlayer).isInJail() && die1 != die2) {
