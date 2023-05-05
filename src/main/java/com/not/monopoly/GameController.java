@@ -23,7 +23,7 @@ import static com.not.monopoly.PlayerCreationController.playerCount;
 public class GameController {
 
 	@FXML
-	public GridPane gridPane;
+	GridPane gridPane;
 	@FXML
 	ImageView rollButton;
 	@FXML
@@ -48,20 +48,10 @@ public class GameController {
 	ImageView player3Piece;
 	@FXML
 	ImageView player4Piece;
-
-
 	@FXML
 	Pane startPane;
 	@FXML
 	Button start;
-	public void initializeGameboard() {
-		runSetup();
-		initPieceCoords();
-		pieces.put(0, player1Piece);
-		pieces.put(1, player2Piece);
-		pieces.put(2, player3Piece);
-		pieces.put(3, player4Piece);
-	}
 	@FXML
 	Label playerOneLabel;
 	@FXML
@@ -98,6 +88,14 @@ public class GameController {
 	TextArea actionFeed;
 	@FXML
 	TextArea actionLog;
+	public void initializeGameboard() {
+		runSetup();
+		initPieceCoords();
+		pieces.put(0, player1Piece);
+		pieces.put(1, player2Piece);
+		pieces.put(2, player3Piece);
+		pieces.put(3, player4Piece);
+	}
 	Random random = new Random();
 	int roll;
 	public void handleRollButton() {
