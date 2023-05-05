@@ -3,9 +3,11 @@ package com.not.monopoly;
 import com.not.monopoly.Objects.Player;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 
 import java.io.ObjectInputStream;
 import java.util.HashMap;
@@ -13,6 +15,7 @@ import java.util.Random;
 
 import static com.not.monopoly.Checks.isOnProperty;
 import static com.not.monopoly.Main.*;
+import static com.not.monopoly.PlayerCreationController.playerCount;
 
 @SuppressWarnings("unused")
 public class GameController {
@@ -56,38 +59,66 @@ public class GameController {
 	@FXML
 	static ImageView player4Piece;
 
+
 	@FXML
-	static Label playerOneLabel;
+	Pane startPane;
 	@FXML
-	static Label playerOneBalanceLabel;
+	Button start;
 	@FXML
-	static ImageView playerOneCard;
+	Label playerOneLabel;
 	@FXML
-	static Label playerTwoLabel;
+	Label playerOneBalanceLabel;
 	@FXML
-	static Label playerTwoBalanceLabel;
+	ImageView playerOneCard;
 	@FXML
-	static ImageView playerTwoCard;
+	Label playerTwoLabel;
 	@FXML
-	static Label playerThreeLabel;
+	Label playerTwoBalanceLabel;
 	@FXML
-	static Label playerThreeBalanceLabel;
+	ImageView playerTwoCard;
 	@FXML
-	static ImageView playerThreeCard;
+	Label playerThreeLabel;
 	@FXML
-	static Label playerFourLabel;
+	Label playerThreeBalanceLabel;
 	@FXML
-	static Label playerFourBalanceLabel;
+	ImageView playerThreeCard;
 	@FXML
-	static ImageView playerFourCard;
+	Label playerFourLabel;
 	@FXML
-	static Group playerDataOneGroup;
+	Label playerFourBalanceLabel;
 	@FXML
-	static Group playerDataTwoGroup;
+	ImageView playerFourCard;
 	@FXML
-	static Group playerDataThreeGroup;
+	Group playerDataOneGroup;
 	@FXML
-	static Group playerDataFourGroup;
+	Group playerDataTwoGroup;
+	@FXML
+	Group playerDataThreeGroup;
+	@FXML
+	Group playerDataFourGroup;
+	public void runSetup() {
+		startPane.setVisible(false);
+		startPane.setDisable(true);
+		System.out.println(playerCount);
+		System.out.println(players.size());
+		Debug.printPlayersDebug(players);
+		//Prepares and Establishes the Player Cards
+		setupPlayerCards(playerOneLabel, playerOneBalanceLabel, playerOneCard, 0);
+		setupPlayerCards(playerTwoLabel, playerTwoBalanceLabel, playerTwoCard, 1);
+		if (players.size() == 3) {
+			setupPlayerCards(playerThreeLabel, playerThreeBalanceLabel, playerThreeCard, 2);
+			playerDataThreeGroup.setVisible(true);
+		}
+		if (players.size() == 4) {
+			setupPlayerCards(playerFourLabel, playerFourBalanceLabel, playerFourCard, 3);
+			playerDataFourGroup.setVisible(true);        }
+	}
+
+	protected void setupPlayerCards(Label playerNameLabel, Label playerBalanceLabel, ImageView playerCard, int i) {
+			playerNameLabel.setText(players.get(i).getName());
+			playerBalanceLabel.setText(players.get(i).getBalanceAsString());
+			playerCard.setVisible(true);
+	}
 
 	static HashMap<Integer, ImageView> pieces = new HashMap<>();
 	static HashMap<Integer, Integer> xCoords = new HashMap<>(40);

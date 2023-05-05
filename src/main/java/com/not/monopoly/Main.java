@@ -25,6 +25,7 @@ public class Main extends Application {
 	protected static Property[] spaces;
 	protected static int doubleRoll = 0;
 
+
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu-screen.fxml")));
@@ -36,7 +37,6 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch();
 	}
-
 
 	// TODO - make player property squares empty with black outline
 	//OLD (maybe useful) Code

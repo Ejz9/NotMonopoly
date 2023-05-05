@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -14,6 +13,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 import static com.not.monopoly.Main.players;
+import static com.not.monopoly.SetupGameBoard.runSetup;
 
 public class PlayerCreationController {
     protected static int playerCount;
@@ -78,6 +78,10 @@ public class PlayerCreationController {
     Label countQuestion;
     @FXML
     Label nameQuestion;
+    String playerOneString;
+    String playerTwoString;
+    String playerThreeString;
+    String playerFourString;
     public void handleConfirmButton() {
         if (twoPlayerButton.isDisabled()){
             playerCount = 2;
@@ -113,6 +117,35 @@ public class PlayerCreationController {
             case 2 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
+                }
+            }
+            case 3 -> {
+                if (playerOneCheck.isSelected() && playerTwoCheck.isSelected() && playerThreeCheck.isSelected()) {
+                    proceedToGameButton.setVisible(true);
+                }
+            }
+            case 4 -> {
+                if (playerOneCheck.isSelected() && playerTwoCheck.isSelected() && playerThreeCheck.isSelected() && playerFourCheck.isSelected()) {
+                    proceedToGameButton.setVisible(true);
+                }
+            }
+        }
+    }
+
+    public void handlePlayMonopoly() throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
+        Stage window = (Stage) backButton.getScene().getWindow();
+        window.setScene(new Scene(root, 1280, 720));
+
+        createPlayerObjects();
+
+    }
+
+    public void createPlayerObjects() {
+        switch (playerCount) {
+            case 2 -> {
+                if (playerOneCheck.isSelected() && playerTwoCheck.isSelected()) {
+                    proceedToGameButton.setVisible(true);
                     players.add(new Player(playerOneName.getText()));
                     players.add(new Player(playerTwoName.getText()));
                 }
@@ -135,14 +168,6 @@ public class PlayerCreationController {
                 }
             }
         }
-    }
-
-    public void handlePlayMonopoly() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
-        Stage window = (Stage) backButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1280, 720));
-
-        SetupGameBoard.runSetup();
     }
 
 
