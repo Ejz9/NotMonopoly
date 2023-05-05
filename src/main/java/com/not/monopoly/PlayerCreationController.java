@@ -13,6 +13,11 @@ import java.util.Objects;
 
 public class PlayerCreationController {
     int playerCount;
+    public static String playerOne;
+    public static String playerTwo;
+    public static String playerThree;
+    public static String playerFour;
+
     @FXML
     Button backButton;
 
@@ -59,25 +64,17 @@ public class PlayerCreationController {
     @FXML
     CheckBox playerOneCheck;
     @FXML
-    String playerOne;
-    @FXML
     TextField playerTwoName;
     @FXML
     CheckBox playerTwoCheck;
-    @FXML
-    String playerTwo;
     @FXML
     TextField playerThreeName;
     @FXML
     CheckBox playerThreeCheck;
     @FXML
-    String playerThree;
-    @FXML
     TextField playerFourName;
     @FXML
     CheckBox playerFourCheck;
-    @FXML
-    String playerFour;
     @FXML
     Label countQuestion;
     @FXML
@@ -95,6 +92,8 @@ public class PlayerCreationController {
 
     @FXML
     Button cancelButton;
+    @FXML
+    Button backNameButton;
     public void handleCancelButton() {
         playerCount = 0;
         resetScene();
@@ -115,40 +114,39 @@ public class PlayerCreationController {
             case 2 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = String.valueOf(playerOneName);
-                    playerTwo = String.valueOf(playerTwoName);
+                    playerOne = playerOneName.getText();
+                    playerTwo = playerTwoName.getText();
                 }
             }
             case 3 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected() && playerThreeCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = String.valueOf(playerOneName);
-                    playerTwo = String.valueOf(playerTwoName);
-                    playerThree = String.valueOf(playerThreeName);
+                    playerOne = playerOneName.getText();
+                    playerTwo = playerTwoName.getText();
+                    playerThree = playerThreeName.getText();
                 }
             }
             case 4 -> {
                 if (playerOneCheck.isSelected() && playerTwoCheck.isSelected() && playerThreeCheck.isSelected() && playerFourCheck.isSelected()) {
                     proceedToGameButton.setVisible(true);
-                    playerOne = String.valueOf(playerOneName);
-                    playerTwo = String.valueOf(playerTwoName);
-                    playerThree = String.valueOf(playerThreeName);
-                    playerFour = String.valueOf(playerFourName);
+                    playerOne = playerOneName.getText();
+                    playerTwo = playerTwoName.getText();
+                    playerThree = playerThreeName.getText();
+                    playerFour = playerFourName.getText();
                 }
             }
         }
+
+        System.out.println(playerOne);
+        System.out.println(playerTwo);
+        System.out.println(playerThree);
+        System.out.println(playerFour);
     }
 
     public void handlePlayMonopoly() throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
         Stage window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 1280, 720));
-    }
-
-    @FXML
-    Button backNameButton;
-    public void handleBackNameButton() {
-
     }
 
     public void resetScene() {
