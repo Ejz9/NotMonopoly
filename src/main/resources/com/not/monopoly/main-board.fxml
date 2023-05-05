@@ -12,7 +12,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.GameController">
    <children>
-      <ImageView fitHeight="731.0" fitWidth="1297.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../menuImages/menuBackroung.jpg" />
          </image>
@@ -60,6 +60,11 @@
                   <ImageView fx:id="buyButton" fitHeight="54.0" fitWidth="53.0" onMouseClicked="#handleBuyButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6">
                      <image>
                         <Image url="@../../../images/buyHouseIcon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="bailButton" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../images/bailOutButton.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="auctionButton" fitHeight="61.0" fitWidth="77.0" onMouseClicked="#handleAuctionButton" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="6">
