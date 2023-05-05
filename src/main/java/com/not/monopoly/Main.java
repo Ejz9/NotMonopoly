@@ -36,28 +36,26 @@ public class Main extends Application {
 		primaryStage.setScene(new Scene(root, 1280, 720));
 		primaryStage.show();
 		GameController gameController = new GameController();
+
+		// Creates space data from file
 		try {
 			spaces = createSpaces();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		playerPositions = new ArrayList<>(playerCount);
-		for (int i = 0; i < playerCount; i++) {
-			playerPositions.set(i, 0);
-		}
+
+		// Set up player count and data
 		players = new ArrayList<>(playerCount);
 		getPlayerNames(playerCount, players);
 
-		do {
-			if (!players.get(activePlayer).isInJail()) {
 
+		do {
+			if (players.get(activePlayer).isInJail()) {
+				roll
 			} else {
 
 			}
 
-			for (Player player : players) {
-
-			}
 		} while (isAllOwned() == -1);
 
 
