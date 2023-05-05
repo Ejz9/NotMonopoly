@@ -22,7 +22,6 @@ import static com.not.monopoly.PlayerCreationController.playerCount;
 @SuppressWarnings("unused")
 public class GameController {
 
-	ArrayList<Integer> playerPositions;
 	@FXML
 	public GridPane gridPane;
 	@FXML
@@ -111,6 +110,10 @@ public class GameController {
 		handleRoll();
 	}
 	public void handleRoll() {
+		if (isOnProperty(players.get(activePlayer))) {
+
+		}
+
 		updatePlayerPosition();
 //		switch (players.get(activePlayer).getPosition()) {
 //			case "Property" -> {
@@ -119,8 +122,8 @@ public class GameController {
 //		}
 	}
 	protected void updatePlayerPosition() {
-		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(playerPositions.get(activePlayer)));
-		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(playerPositions.get(activePlayer)));
+		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(players.get(activePlayer).getPosition()));
+		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(players.get(activePlayer).getPosition()));
 	}
 	public void updateActionFeed() {
 		actionFeed.setText(players.get(activePlayer).getName() + " Roll The Dice!");
@@ -191,8 +194,8 @@ public class GameController {
 
 
 	public void handleBuyButton() {
-		players.get(activePlayer).addProperty(spaces[playerPositions.get(activePlayer)]);
-		players.get(activePlayer).setBalance(players.get(activePlayer).getBalance() - spaces[playerPositions.get(activePlayer)].getPrice());
+		players.get(activePlayer).addProperty(spaces[players.get(activePlayer).getPosition()]);
+		players.get(activePlayer).setBalance(players.get(activePlayer).getBalance() - spaces[players.get(activePlayer).getPosition()].getPrice());
 		buyButton.setDisable(true);
 		auctionButton.setDisable(true);
 		buyButton.setOpacity(.3);
@@ -239,7 +242,7 @@ public class GameController {
 		if (activePlayer >= players.size()) {
 			activePlayer = 0;
 		}
-		if (isOnProperty(players.get(activePlayer)) && spaces[playerPositions.get(activePlayer)].getOwnedBy() != null) {
+		if (isOnProperty(players.get(activePlayer)) && spaces[players.get(activePlayer).getPosition()].getOwnedBy() != null) {
 			buyButton.setDisable(false);
 			auctionButton.setDisable(false);
 			buyButton.setOpacity(1);
@@ -341,12 +344,12 @@ public class GameController {
 	}
 
 	protected boolean isOnProperty(Player player) {
-		return spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Property") ||
-				spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Railroad") ||
-				spaces[playerPositions.get(activePlayer)].getClass().getSimpleName().equals("Utilities");
+		return spaces[players.get(activePlayer).getPosition()].getClass().getSimpleName().equals("Property") ||
+				spaces[players.get(activePlayer).getPosition()].getClass().getSimpleName().equals("Railroad") ||
+				spaces[players.get(activePlayer).getPosition()].getClass().getSimpleName().equals("Utilities");
 	}
 	protected void goToJail() {
-		playerPositions.set(activePlayer, 10);
+		players.get(activePlayer).setPosition(10);
 		players.get(activePlayer).setInJail(true);
 	}
 }
