@@ -16,22 +16,22 @@ public class GameController {
 	public static GridPane gridPane;
 
 	@FXML
-	ImageView rollButton;
+	static ImageView rollButton;
 
 	@FXML
-	ImageView buyButton;
+	static ImageView buyButton;
 
 	@FXML
-	ImageView auctionButton;
+	static ImageView auctionButton;
 
 	@FXML
-	ImageView tradeButton;
+	static ImageView tradeButton;
 
 	@FXML
-	ImageView endTurnButton;
+	static ImageView endTurnButton;
 
 	@FXML
-	ImageView managePropertyButton;
+	static ImageView managePropertyButton;
 
 	@FXML
 	static ImageView player1Piece;
@@ -105,7 +105,7 @@ public class GameController {
 
 	}
 
-	protected static void updatePiece(int activePlayer) {
+	protected static void updatePiece(){
 		initPieceCoords();
 		pieces.put(0, player1Piece);
 		pieces.put(1, player2Piece);

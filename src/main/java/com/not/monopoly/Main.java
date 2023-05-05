@@ -36,28 +36,29 @@ public class Main extends Application {
 		primaryStage.setScene(new Scene(root, 1280, 720));
 		primaryStage.show();
 		GameController gameController = new GameController();
+
+		// Creates space data from file
 		try {
 			spaces = createSpaces();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		playerPositions = new ArrayList<>(playerCount);
-		for (int i = 0; i < playerCount; i++) {
-			playerPositions.set(i, 0);
-		}
-		players = new ArrayList<>(playerCount);
-		getPlayerNames(playerCount, players);
 
 		do {
-			if (!players.get(activePlayer).isInJail()) {
+			if (players.get(activePlayer).isInJail()) {
+				GameController.rollButton.setOpacity(1);
+				GameController.rollButton.setDisable(false);
+
+				players.get(activePlayer).setPosition(players.get(activePlayer).getPosition() + die1 + die2);
+				GameController.updatePiece();
+			} else if (players.get(activePlayer).isInJail() && die1 != die2) {
+
 
 			} else {
 
-			}
-
-			for (Player player : players) {
 
 			}
+
 		} while (isAllOwned() == -1);
 
 
@@ -70,9 +71,6 @@ public class Main extends Application {
 			}
 		}
 		return -1;
-	}
-
-	private void getPlayerNames(int playerCount, ArrayList<Player> players) {
 	}
 
 	// TODO - make player property squares empty with black outline
