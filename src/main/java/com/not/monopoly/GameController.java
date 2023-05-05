@@ -23,6 +23,66 @@ import static com.not.monopoly.SetupGameBoard.createSpaces;
 public class GameController {
 
 	@FXML
+	public Label Label1;
+	@FXML
+	public Label Label3;
+	@FXML
+	public Label Label4;
+	@FXML
+	public Label Label5;
+	@FXML
+	public Label Label6;
+	@FXML
+	public Label Label8;
+	@FXML
+	public Label Label9;
+	@FXML
+	public Label Label11;
+	@FXML
+	public Label Label12;
+	@FXML
+	public Label Label13;
+	@FXML
+	public Label Label14;
+	@FXML
+	public Label Label15;
+	@FXML
+	public Label Label16;
+	@FXML
+	public Label Label18;
+	@FXML
+	public Label Label19;
+	@FXML
+	public Label Label21;
+	@FXML
+	public Label Label23;
+	@FXML
+	public Label Label24;
+	@FXML
+	public Label Label25;
+	@FXML
+	public Label Label26;
+	@FXML
+	public Label Label27;
+	@FXML
+	public Label Label28;
+	@FXML
+	public Label Label29;
+	@FXML
+	public Label Label31;
+	@FXML
+	public Label Label32;
+	@FXML
+	public Label Label34;
+	@FXML
+	public Label Label35;
+	@FXML
+	public Label Label37;
+	@FXML
+	public Label Label38;
+	@FXML
+	public Label Label39;
+	@FXML
 	GridPane gridPane;
 	@FXML
 	ImageView rollButton;
@@ -52,8 +112,6 @@ public class GameController {
 	Pane startPane;
 	@FXML
 	Button start;
-	Property[] spaces = createSpaces();
-
 	@FXML
 	Label playerOneLabel;
 	@FXML
@@ -90,6 +148,7 @@ public class GameController {
 	TextArea actionFeed;
 	@FXML
 	TextArea actionLog;
+	Property[] spaces = createSpaces();
 	Random random = new Random();
 	int doubleRoll;
 	public GameController() throws IOException {

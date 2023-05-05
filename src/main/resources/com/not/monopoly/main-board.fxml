@@ -174,7 +174,55 @@
                         <Image url="@../../../pieces/car.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" text="Price" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <Label fx:id="Label1" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" GridPane.columnIndex="9" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label3" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" GridPane.columnIndex="7" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label4" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" GridPane.columnIndex="6" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label5" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" GridPane.columnIndex="5" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label6" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" GridPane.columnIndex="4" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label8" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label9" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -185,7 +233,7 @@
                         <Font name="Copperplate Gothic Light" size="9.0" />
                      </font>
                   </Label>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" text="Price" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <Label fx:id="Label11" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="59.0" rotate="90.0" textAlignment="CENTER" GridPane.rowIndex="9">
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
@@ -193,7 +241,7 @@
                         <Font name="Copperplate Gothic Light" size="9.0" />
                      </font>
                   </Label>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" text="Price" GridPane.columnIndex="5" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <Label fx:id="Label12" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="59.0" rotate="90.0" textAlignment="CENTER" GridPane.rowIndex="8">
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
@@ -201,7 +249,7 @@
                         <Font name="Copperplate Gothic Light" size="9.0" />
                      </font>
                   </Label>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" text="Price" GridPane.columnIndex="4" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <Label fx:id="Label13" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="59.0" rotate="90.0" textAlignment="CENTER" GridPane.rowIndex="7">
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
@@ -209,7 +257,7 @@
                         <Font name="Copperplate Gothic Light" size="9.0" />
                      </font>
                   </Label>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" text="Price" GridPane.columnIndex="6" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <Label fx:id="Label14" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="59.0" rotate="90.0" textAlignment="CENTER" GridPane.rowIndex="6">
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
@@ -217,7 +265,7 @@
                         <Font name="Copperplate Gothic Light" size="9.0" />
                      </font>
                   </Label>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" text="Price" GridPane.columnIndex="7" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <Label fx:id="Label15" alignment="BOTTOM_CENTER" prefHeight="58.0" prefWidth="59.0" rotate="90.0" textAlignment="CENTER" GridPane.rowIndex="5">
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
@@ -225,7 +273,146 @@
                         <Font name="Copperplate Gothic Light" size="9.0" />
                      </font>
                   </Label>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" text="Price" GridPane.columnIndex="9" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
+                  <Label fx:id="Label16" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="59.0" rotate="90.0" textAlignment="CENTER" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label18" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="59.0" rotate="90.0" textAlignment="CENTER" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label19" alignment="BOTTOM_CENTER" prefHeight="65.0" prefWidth="59.0" rotate="90.0" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="Label21" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" rotate="180.0" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label23" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" rotate="180.0" GridPane.columnIndex="3" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label24" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" rotate="180.0" GridPane.columnIndex="4" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label25" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" rotate="180.0" GridPane.columnIndex="5" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label26" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" rotate="180.0" GridPane.columnIndex="6" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label27" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" rotate="180.0" GridPane.columnIndex="7" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label28" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" rotate="180.0" GridPane.columnIndex="8" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label29" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" rotate="180.0" GridPane.columnIndex="9" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label31" alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="59.0" rotate="270.0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label32" alignment="BOTTOM_CENTER" layoutX="680.0" layoutY="111.0" prefHeight="46.0" prefWidth="59.0" rotate="270.0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label34" alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="59.0" rotate="270.0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label35" alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="59.0" rotate="270.0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label37" alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="59.0" rotate="270.0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label38" alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="59.0" rotate="270.0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Copperplate Gothic Light" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label39" alignment="BOTTOM_CENTER" prefHeight="46.0" prefWidth="59.0" rotate="270.0" textAlignment="CENTER" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
