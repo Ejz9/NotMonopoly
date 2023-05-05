@@ -202,6 +202,7 @@ public class GameController {
 	HashMap<Integer, Integer> yCoords = new HashMap<>(40);
 
 	// Changes the die values to random between 1 and 6
+	// TODO - Correct behavior of landing on property without purchase or auction being available
 	public void handleRollButton() {
 		die1 = random.nextInt(1, 6);
 		die2 = random.nextInt(1, 6);
