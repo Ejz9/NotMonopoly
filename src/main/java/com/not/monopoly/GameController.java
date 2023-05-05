@@ -2,6 +2,7 @@ package com.not.monopoly;
 
 import com.not.monopoly.Objects.Player;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
@@ -223,5 +224,4 @@ public class GameController {
 		yCoords.put(38, 8);
 		yCoords.put(39, 9);
 	}
-
 }
