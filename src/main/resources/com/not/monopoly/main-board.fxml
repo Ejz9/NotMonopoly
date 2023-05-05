@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.GameController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.GameController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -62,7 +57,7 @@
                         <Image url="@../../../images/buyHouseIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="bailOutButton" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                  <ImageView fx:id="bailButton" disable="true" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="7">
                      <image>
                         <Image url="@../../../images/bailOutButton.png" />
                      </image>
@@ -72,7 +67,7 @@
                         <Image url="@../../../images/auctionIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="getOutOfJailFree" disable="true" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                  <ImageView fx:id="getOutOfJailFree" disable="true" fitHeight="62.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="7">
                      <image>
                         <Image url="@../../../propertyImages/getOutOfJail.png" />
                      </image>
@@ -92,22 +87,22 @@
                         <Image url="@../../../images/propertyManagement.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="player1Peice" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                  <ImageView fx:id="player1Piece" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../pieces/dog.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="player2Peice" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                  <ImageView fx:id="player2Piece" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../pieces/cat.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="player3Peice" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                  <ImageView fx:id="player3Piece" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../pieces/hat.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="player4Peice" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                  <ImageView fx:id="player4Piece" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../pieces/car.png" />
                      </image>

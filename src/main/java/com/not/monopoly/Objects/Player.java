@@ -6,12 +6,14 @@ public class Player {
 	private String name;
 	private int balance;
 	private int position;
-	private final ArrayList<Property> properties = new ArrayList<>();
+	private ArrayList<Property> properties = new ArrayList<>();
+	private int jailCards;
 	private boolean inJail = false;
 	public Player(String name){
 		this.name = name;
 		balance = 1500;
 		position = 0;
+		jailCards = 0;
 	}
 
 	public String getName() {
@@ -55,5 +57,14 @@ public class Player {
 
 	public void setPosition(int position) {
 		this.position = position;
+	}
+
+
+	public int getJailCards() {
+		return jailCards;
+	}
+
+	public void setJailCards(int jailCards) {
+		this.jailCards = jailCards;
 	}
 }

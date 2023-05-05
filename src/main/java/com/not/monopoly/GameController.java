@@ -1,9 +1,11 @@
 package com.not.monopoly;
 
+import com.not.monopoly.Objects.Player;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
+import java.io.ObjectInputStream;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -34,6 +36,12 @@ public class GameController {
 	static ImageView managePropertyButton;
 
 	@FXML
+	static ImageView bailButton;
+
+	@FXML
+	static ImageView getOutOfJailFree;
+
+	@FXML
 	static ImageView player1Piece;
 
 	@FXML
@@ -49,16 +57,17 @@ public class GameController {
 	static HashMap<Integer, Integer> xCoords = new HashMap<>(40);
 	static HashMap<Integer, Integer> yCoords = new HashMap<>(40);
 
-	public GameController() {
-
-	}
-
+	// Changes the die values to random between 1 and 6
 	public void handleRollButton() {
 		Random random = new Random();
 		die1 = random.nextInt(1, 6);
 		die2 = random.nextInt(1, 6);
 		rollButton.setDisable(true);
 		rollButton.setOpacity(.3);
+		bailButton.setVisible(false);
+		bailButton.setDisable(true);
+		getOutOfJailFree.setVisible(false);
+		getOutOfJailFree.setDisable(true);
 	}
 
 	public void handleBuyButton() {
@@ -68,6 +77,32 @@ public class GameController {
 		auctionButton.setDisable(true);
 		buyButton.setOpacity(.3);
 		auctionButton.setOpacity(.3);
+	}
+
+	public void handleBailButton() {
+		bailButton.setVisible(false);
+		bailButton.setDisable(true);
+		getOutOfJailFree.setVisible(false);
+		getOutOfJailFree.setDisable(true);
+		players.get(activePlayer).setInJail(false);
+	}
+
+	public void handleGetOutOfJailButton() {
+		bailButton.setVisible(false);
+		bailButton.setDisable(true);
+		getOutOfJailFree.setVisible(false);
+		getOutOfJailFree.setDisable(true);
+		players.get(activePlayer).setInJail(false);
+		players.get(activePlayer).setJailCards(players.get(activePlayer).getJailCards() - 1);
+	}
+
+	public boolean hasGetOutOfJailCard() {
+		for (Player player : players){
+			if (player.get(activePlayer).getJailCards() > 0){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public void handleAuctionButton() {
@@ -198,7 +233,4 @@ public class GameController {
 		yCoords.put(39, 9);
 	}
 
-	public ImageView getPlayer1Piece() {
-		return player1Piece;
-	}
 }
