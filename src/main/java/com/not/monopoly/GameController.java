@@ -12,6 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -24,6 +25,7 @@ public class GameController {
 
 	@FXML
 	public static GridPane gridPane;
+	protected static ArrayList<Integer> playerPositions;
 	@FXML
 	ImageView rollButton;
 	@FXML

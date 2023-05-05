@@ -16,7 +16,6 @@ import com.not.monopoly.Objects.*;
 
 public class Main extends Application {
 
-	protected static ArrayList<Integer> playerPositions;
 	protected static int activePlayer = 0;
 	protected static int die1;
 	protected static int die2;

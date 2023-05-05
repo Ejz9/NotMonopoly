@@ -2,6 +2,7 @@ package com.not.monopoly;
 
 import com.not.monopoly.Objects.Player;
 
+import static com.not.monopoly.GameController.*;
 import static com.not.monopoly.Main.*;
 
 public class Checks {
