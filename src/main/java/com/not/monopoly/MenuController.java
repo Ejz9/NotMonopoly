@@ -21,13 +21,6 @@ public class MenuController {
     }
 
     @FXML
-    ImageView menuButton;
-    public void handleMenuButton() {
-        // TODO - Make Rules Screen
-        // TODO - Use Menu button for settings?
-    }
-
-    @FXML
     ImageView exitButton;
     public void handleExitButton() {
         System.exit(1);

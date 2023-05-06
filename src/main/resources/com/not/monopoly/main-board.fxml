@@ -149,22 +149,22 @@
                   </ImageView>
                   <ImageView fx:id="player1Piece" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../pieces/dog.png" />
+                        <Image url="@../../../pieces/hat.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="player2Piece" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../pieces/cat.png" />
+                        <Image url="@../../../pieces/ship.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="player3Piece" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../pieces/hat.png" />
+                        <Image url="@../../../pieces/cat.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="player4Piece" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../pieces/car.png" />
+                        <Image url="@../../../pieces/dog.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="Label1" alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="59.0" GridPane.columnIndex="9" GridPane.rowIndex="10" GridPane.valignment="BOTTOM">
@@ -424,7 +424,7 @@
                   <Image url="@../../../menuImages/blackImage.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="start" layoutX="572.0" layoutY="325.0" mnemonicParsing="false" onAction="#initGameboard" text="Start">
+            <Button fx:id="start" layoutX="572.0" layoutY="325.0" mnemonicParsing="false" onAction="#initGameBoard" text="Start">
                <font>
                   <Font size="40.0" />
                </font>

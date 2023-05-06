@@ -1,22 +1,17 @@
 package com.not.monopoly;
 
 import com.not.monopoly.Objects.*;
-import javafx.scene.control.Label;
-import javafx.scene.control.Labeled;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import static com.not.monopoly.GameController.*;
-import static com.not.monopoly.Main.activePlayer;
-import static com.not.monopoly.Main.players;
-
-public class SetupGameBoard {
+public class PropertyCreation {
     private static final String PROPERTY_VALUES = "src/main/resources/data/PropertyValues";
     private static final String COORDINATES = "src/main/resources/data/coordinates_xy";
+    private static final String PROPERTY_NAMES = "src/main/resources/data/PropertyNames";
+
     protected static Property[] createSpaces() throws IOException {
         Property[] spaces = new Property[40];
         FileManager propertyValues = new FileManager(new File(PROPERTY_VALUES));
@@ -128,9 +123,10 @@ public class SetupGameBoard {
         return spaces;
     }
 
-    protected static void setupPlayerCards(Label playerNameLabel, Label playerBalanceLabel, ImageView playerCard) {
-            playerNameLabel.setText(players.get(activePlayer).getName());
-            playerBalanceLabel.setText(players.get(activePlayer).getBalanceAsString());
-            playerCard.setVisible(true);
+    protected static List<String> createPropertyNamesList() throws IOException {
+        FileManager propertyNames = new FileManager(new File(PROPERTY_NAMES));
+        return propertyNames.readData();
     }
+
+
 }

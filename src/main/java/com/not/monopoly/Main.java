@@ -15,8 +15,6 @@ import java.util.Objects;
 
 public class Main extends Application {
 	protected static int activePlayer = 0;
-	protected static int die1;
-	protected static int die2;
 	protected static List<Player> players = new ArrayList<>();
 
 
@@ -26,19 +24,9 @@ public class Main extends Application {
 		primaryStage.setTitle("Monopoly Game");
 		primaryStage.setScene(new Scene(root, 1280, 720));
 		primaryStage.show();
-
 	}
 
 	public static void main(String[] args) {
 		launch();
 	}
-
-	// TODO - make player property squares empty with black outline
-	//OLD (maybe useful) Code
-    /*public static void onClickPlay(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("main-board.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        stage.setScene(scene);
-        stage.show();
-    }*/
 }

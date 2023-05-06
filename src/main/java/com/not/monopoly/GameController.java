@@ -1,5 +1,6 @@
 package com.not.monopoly;
 
+import com.not.monopoly.DONOTSUBMIT.Debug;
 import com.not.monopoly.Objects.Player;
 import com.not.monopoly.Objects.Property;
 import javafx.fxml.FXML;
@@ -17,10 +18,13 @@ import java.util.Random;
 
 import static com.not.monopoly.Main.*;
 import static com.not.monopoly.PlayerCreationController.playerCount;
-import static com.not.monopoly.SetupGameBoard.createSpaces;
+import static com.not.monopoly.PropertyCreation.createSpaces;
 
 @SuppressWarnings("unused")
 public class GameController {
+
+	int die1;
+	int die2;
 
 	@FXML
 	public Label Label1;
@@ -202,7 +206,7 @@ public class GameController {
 		}
 	}
 
-	public void initGameboard() {
+	public void initGameBoard() {
 		runSetup();
 		initPropertyLabels();
 		initPieceCoords();
@@ -242,28 +246,6 @@ public class GameController {
 		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(players.get(activePlayer).getPosition()));
 	}
 
-	public void updateActionFeed() {
-		actionFeed.setText(players.get(activePlayer).getName() + " Roll The Dice!");
-	}
-
-	public void updateActionLog(String action) {
-		switch (action) {
-			case "roll" -> {
-
-			}
-			case "auction" -> {
-
-			}
-			//Append more | Change to If if does not parse string compare.
-			case "endTurn" -> {
-
-			}
-		}
-		actionLog.setText(players.get(activePlayer).getName() + "Rolled");
-	}
-
-
-
 	public void setBuyPhase() {
 
 	}
@@ -296,12 +278,13 @@ public class GameController {
 		if (players.size() == 4) {
 			setupPlayerCards(playerFourLabel, playerFourBalanceLabel, playerFourCard, 3);
 			playerDataFourGroup.setVisible(true);        }
+
 	}
 
 	protected void setupPlayerCards(Label playerNameLabel, Label playerBalanceLabel, ImageView playerCard, int i) {
-			playerNameLabel.setText(players.get(i).getName());
-			playerBalanceLabel.setText(players.get(i).getBalanceAsString());
-			playerCard.setVisible(true);
+		playerNameLabel.setText(players.get(i).getName());
+		playerBalanceLabel.setText(players.get(i).getBalanceAsString());
+		playerCard.setVisible(true);
 	}
 
 	HashMap<Integer, ImageView> pieces = new HashMap<>();
@@ -530,10 +513,6 @@ public class GameController {
 		yCoords.put(39, 9);
 	}
 
-	public void setupRoll() {
-
-	}
-
 	protected boolean isOnProperty(Player player) {
 		return player.getPosition() != 0 && player.getPosition() != 2 && player.getPosition() != 4 && player.getPosition() != 7 && player.getPosition() != 10 &&
 				player.getPosition() != 17 && player.getPosition() != 20 && player.getPosition() != 22 && player.getPosition() != 28 && player.getPosition() != 30 &&
@@ -544,6 +523,4 @@ public class GameController {
 		players.get(activePlayer).setInJail(true);
 		doubleRoll = 0;
 	}
-
-
 }
