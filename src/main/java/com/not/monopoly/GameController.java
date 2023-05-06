@@ -155,36 +155,51 @@ public class GameController {
 	}
 
 	public void initPropertyLabels() {
-		Label1.setText(String.format("$ %d", spaces[1].getPrice()));
-		Label3.setText(String.format("$ %d", spaces[3].getPrice()));
-		Label4.setText(String.format("$ %d", spaces[4].getActiveRent()));
-		Label5.setText(String.format("$ %d", spaces[5].getPrice()));
-		Label6.setText(String.format("$ %d", spaces[6].getPrice()));
-		Label8.setText(String.format("$ %d", spaces[8].getPrice()));
-		Label9.setText(String.format("$ %d", spaces[9].getPrice()));
-		Label11.setText(String.format("$ %d", spaces[11].getPrice()));
-		Label12.setText(String.format("$ %d", spaces[12].getPrice()));
-		Label13.setText(String.format("$ %d", spaces[13].getPrice()));
-		Label14.setText(String.format("$ %d", spaces[14].getPrice()));
-		Label15.setText(String.format("$ %d", spaces[15].getPrice()));
-		Label16.setText(String.format("$ %d", spaces[16].getPrice()));
-		Label18.setText(String.format("$ %d", spaces[18].getPrice()));
-		Label19.setText(String.format("$ %d", spaces[19].getPrice()));
-		Label21.setText(String.format("$ %d", spaces[21].getPrice()));
-		Label23.setText(String.format("$ %d", spaces[23].getPrice()));
-		Label24.setText(String.format("$ %d", spaces[24].getPrice()));
-		Label25.setText(String.format("$ %d", spaces[25].getPrice()));
-		Label26.setText(String.format("$ %d", spaces[26].getPrice()));
-		Label27.setText(String.format("$ %d", spaces[27].getPrice()));
-		Label28.setText(String.format("$ %d", spaces[28].getPrice()));
-		Label29.setText(String.format("$ %d", spaces[29].getPrice()));
-		Label31.setText(String.format("$ %d", spaces[31].getPrice()));
-		Label32.setText(String.format("$ %d", spaces[32].getPrice()));
-		Label34.setText(String.format("$ %d", spaces[34].getPrice()));
-		Label35.setText(String.format("$ %d", spaces[35].getPrice()));
-		Label37.setText(String.format("$ %d", spaces[37].getPrice()));
-		Label38.setText(String.format("$ %d", spaces[38].getActiveRent()));
-		Label39.setText(String.format("$ %d", spaces[39].getPrice()));
+		updatePassthrough(Label1, 1);
+		updatePassthrough(Label3, 3);
+		updatePassthrough(Label4, 4);
+		updatePassthrough(Label5, 5);
+		updatePassthrough(Label6, 6);
+		updatePassthrough(Label8, 8);
+		updatePassthrough(Label9, 9);
+		updatePassthrough(Label11, 11);
+		updatePassthrough(Label12, 12);
+		updatePassthrough(Label13, 13);
+		updatePassthrough(Label14, 14);
+		updatePassthrough(Label15, 15);
+		updatePassthrough(Label16, 16);
+		updatePassthrough(Label18, 18);
+		updatePassthrough(Label19, 19);
+		updatePassthrough(Label21, 21);
+		updatePassthrough(Label23, 23);
+		updatePassthrough(Label24, 24);
+		updatePassthrough(Label25, 25);
+		updatePassthrough(Label26, 26);
+		updatePassthrough(Label27, 27);
+		updatePassthrough(Label28, 28);
+		updatePassthrough(Label29, 29);
+		updatePassthrough(Label31, 31);
+		updatePassthrough(Label32, 32);
+		updatePassthrough(Label34, 34);
+		updatePassthrough(Label35, 35);
+		updatePassthrough(Label37, 37);
+		updatePassthrough(Label38, 38);
+		updatePassthrough(Label39, 39);
+	}
+
+	public void updatePassthrough(Label label, int index){
+		if ((spaces[index].getOwnedBy() == null && !spaces[index].getName().equalsIgnoreCase("luxury tax"))) {
+			label.setText(String.format("$ %d", spaces[index].getPrice()));
+		} else if ((spaces[index].getOwnedBy() == null && !spaces[index].getName().equalsIgnoreCase("income tax"))){
+			if (players.get(activePlayer).getTaxCards() == 2) {
+				spaces[index].setActiveRent((die1 + die2) * 10);
+			} else {
+				spaces[index].setActiveRent((die1 + die2) * 2);
+			}
+			label.setText(String.format("$ %d", spaces[index].getActiveRent()));
+		} else {
+			label.setText(String.format("$ %d", spaces[index].getActiveRent()));
+		}
 	}
 
 	public void initGameboard() {
@@ -212,7 +227,6 @@ public class GameController {
 
 	}
 
-
 	protected void handleLandingOnProperty(){
 
 	}
@@ -222,8 +236,8 @@ public class GameController {
 	}
 
 	protected void updatePlayerPosition() {
-		players.get(activePlayer).setPosition(players.get(activePlayer).getPosition() + die1 + die2);
-		System.out.println(spaces[players.get(activePlayer).getPosition()].getName());
+		players.get(activePlayer).setPosition(players.get(activePlayer).getPosition() + (die1 + die2));
+		System.out.println(spaces[players.get(activePlayer).getPosition()].getName() + " " + die1 + " " + die2);
 		GridPane.setColumnIndex(pieces.get(activePlayer), xCoords.get(players.get(activePlayer).getPosition()));
 		GridPane.setRowIndex(pieces.get(activePlayer), yCoords.get(players.get(activePlayer).getPosition()));
 	}
@@ -301,41 +315,57 @@ public class GameController {
 		die2 = random.nextInt(1, 6);
 		rollButton.setDisable(true);
 		rollButton.setOpacity(.3);
+		tradeButton.setOpacity(1);
+		tradeButton.setDisable(false);
 		handleRoll();
+
 	}
 
 	public void handleRoll() {
 		// TODO - Finish fleshing out all use cases
-		if (die1 != die2 && isOnProperty(players.get(activePlayer))) {
+		initPropertyLabels();
+		if (doubleRoll != 3){
 			updatePlayerPosition();
-			if (spaces[players.get(activePlayer).getPosition()].getOwnedBy() == null) {
-				buyButton.setOpacity(1);
-				buyButton.setDisable(false);
-				auctionButton.setOpacity(1);
-				auctionButton.setDisable(false);
-			} else {
-				payRent();
+			if (die1 != die2 && isOnProperty(players.get(activePlayer))) {
+				if (spaces[players.get(activePlayer).getPosition()].getOwnedBy() == null) {
+					buyButton.setOpacity(1);
+					buyButton.setDisable(false);
+					auctionButton.setOpacity(1);
+					auctionButton.setDisable(false);
+				} else {
+					payRent();
+					endTurnButton.setDisable(false);
+					endTurnButton.setOpacity(1);
+				}
+			} else if (die1 != die2 && !isOnProperty(players.get(activePlayer))){
+				updatePlayerPosition();
 				endTurnButton.setDisable(false);
 				endTurnButton.setOpacity(1);
+			} else if (die1 == die2 && isOnProperty(players.get(activePlayer))) {
+				updatePlayerPosition();
+				if (spaces[players.get(activePlayer).getPosition()].getOwnedBy() == null) {
+					buyButton.setOpacity(1);
+					buyButton.setDisable(false);
+					auctionButton.setOpacity(1);
+					auctionButton.setDisable(false);
+				} else {
+					payRent();
+					endTurnButton.setDisable(false);
+					endTurnButton.setOpacity(1);
+				}
+			} else if (die1 == die2 && !isOnProperty(players.get(activePlayer))) {
+				updatePlayerPosition();
+				rollButton.setOpacity(1);
+				rollButton.setDisable(false);
+			} else if (players.get(activePlayer).isInJail() && die1 == die2) {
+				updatePlayerPosition();
+				players.get(activePlayer).setInJail(false);
+				doubleRoll = 0;
 			}
-		} else if (die1 != die2 && !isOnProperty(players.get(activePlayer))){
-			updatePlayerPosition();
-			endTurnButton.setDisable(false);
-			endTurnButton.setOpacity(1);
-		} else if (die1 == die2 && isOnProperty(players.get(activePlayer))) {
-			updatePlayerPosition();
-			rollButton.setOpacity(1);
-			rollButton.setDisable(false);
-		} else if (die1 == die2 && !isOnProperty(players.get(activePlayer))) {
-			updatePlayerPosition();
-			rollButton.setOpacity(1);
-			rollButton.setDisable(false);
-		} else if (players.get(activePlayer).getPosition() == 30) {
-			updatePlayerPosition();
+		} else {
 			goToJail();
-		} else if (players.get(activePlayer).isInJail() && die1 == die2) {
-			updatePlayerPosition();
 		}
+
 
 
 	}
@@ -397,6 +427,8 @@ public class GameController {
 		endTurnButton.setOpacity(.3);
 		rollButton.setDisable(false);
 		rollButton.setOpacity(1);
+		tradeButton.setDisable(false);
+		tradeButton.setOpacity(1);
 		activePlayer++;
 		if (activePlayer >= players.size()) {
 			activePlayer = 0;
@@ -503,13 +535,14 @@ public class GameController {
 	}
 
 	protected boolean isOnProperty(Player player) {
-		return spaces[players.get(activePlayer).getPosition()].getClass().getSimpleName().equals("Property") ||
-				spaces[players.get(activePlayer).getPosition()].getClass().getSimpleName().equals("Railroad") ||
-				spaces[players.get(activePlayer).getPosition()].getClass().getSimpleName().equals("Utilities");
+		return player.getPosition() != 0 && player.getPosition() != 2 && player.getPosition() != 4 && player.getPosition() != 7 && player.getPosition() != 10 &&
+				player.getPosition() != 17 && player.getPosition() != 20 && player.getPosition() != 22 && player.getPosition() != 28 && player.getPosition() != 30 &&
+				player.getPosition() != 33 && player.getPosition() != 36 && player.getPosition() != 38;
 	}
 	protected void goToJail() {
 		players.get(activePlayer).setPosition(10);
 		players.get(activePlayer).setInJail(true);
+		doubleRoll = 0;
 	}
 
 

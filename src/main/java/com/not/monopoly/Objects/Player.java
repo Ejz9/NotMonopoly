@@ -9,12 +9,15 @@ public class Player {
 	private int position;
 	private ArrayList<Property> properties = new ArrayList<>();
 	private int jailCards;
+
+	private int taxCards;
 	private boolean inJail = false;
 	public Player(String name){
 		this.name = name;
 		balance = 1500;
 		position = 0;
 		jailCards = 0;
+		taxCards = 0;
 	}
 
 	public String getName() {
@@ -52,6 +55,7 @@ public class Player {
 	public void addProperty(Property property){
 		properties.add(property);
 	}
+
 	public void removeProperty(Property property) {
 		properties.remove(property);
 	}
@@ -64,7 +68,6 @@ public class Player {
 		this.position = position;
 	}
 
-
 	public int getJailCards() {
 		return jailCards;
 	}
@@ -75,5 +78,13 @@ public class Player {
 
 	public boolean hasGetOutOfJailCard() {
 		return jailCards > 0;
+	}
+
+	public int getTaxCards() {
+		return taxCards;
+	}
+
+	public void setTaxCards(int taxCards) {
+		this.taxCards = taxCards;
 	}
 }

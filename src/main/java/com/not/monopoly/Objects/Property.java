@@ -14,7 +14,7 @@ public class Property extends Space {
 	private final int rent4;
 	private final int hotelRent;
 	private final int mortgage;
-	private Player ownedBy;
+	private Player ownedBy = null;
 	private int x;
 	private int y;
 
