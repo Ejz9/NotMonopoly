@@ -152,6 +152,18 @@ public class GameController {
 	TextArea actionFeed;
 	@FXML
 	TextArea actionLog;
+	@FXML ImageView diceOne1;
+	@FXML ImageView diceTwo1;
+	@FXML ImageView diceOne2;
+	@FXML ImageView diceTwo2;
+	@FXML ImageView diceOne3;
+	@FXML ImageView diceTwo3;
+	@FXML ImageView diceOne4;
+	@FXML ImageView diceTwo4;
+	@FXML ImageView diceOne5;
+	@FXML ImageView diceTwo5;
+	@FXML ImageView diceOne6;
+	@FXML ImageView diceTwo6;
 	Property[] spaces = createSpaces();
 	Random random = new Random();
 	int doubleRoll;
@@ -300,8 +312,40 @@ public class GameController {
 		rollButton.setOpacity(.3);
 		tradeButton.setOpacity(1);
 		tradeButton.setDisable(false);
+		updateDice();
 		handleRoll();
+	}
 
+	private void updateDice() {
+		resetDice();
+		diceVisible(die1, diceOne1, diceOne2, diceOne3, diceOne4, diceOne5, diceOne6);
+		diceVisible(die2, diceTwo1, diceTwo2, diceTwo3, diceTwo4, diceTwo5, diceTwo6);
+	}
+
+	private void diceVisible(int die2, ImageView diceTwo1, ImageView diceTwo2, ImageView diceTwo3, ImageView diceTwo4, ImageView diceTwo5, ImageView diceTwo6) {
+		switch (die2) {
+			case 1 -> diceTwo1.setVisible(true);
+			case 2 -> diceTwo2.setVisible(true);
+			case 3 -> diceTwo3.setVisible(true);
+			case 4 -> diceTwo4.setVisible(true);
+			case 5 -> diceTwo5.setVisible(true);
+			case 6 -> diceTwo6.setVisible(true);
+		}
+	}
+
+	private void resetDice() {
+		diceOne1.setVisible(false);
+		diceTwo1.setVisible(false);
+		diceOne2.setVisible(false);
+		diceTwo2.setVisible(false);
+		diceOne3.setVisible(false);
+		diceTwo3.setVisible(false);
+		diceOne4.setVisible(false);
+		diceTwo4.setVisible(false);
+		diceOne5.setVisible(false);
+		diceTwo5.setVisible(false);
+		diceOne6.setVisible(false);
+		diceTwo6.setVisible(false);
 	}
 
 	public void handleRoll() {
@@ -348,9 +392,6 @@ public class GameController {
 		} else {
 			goToJail();
 		}
-
-
-
 	}
 
 	public void handleBuyButton() {

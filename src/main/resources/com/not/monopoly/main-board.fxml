@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.GameController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.not.monopoly.GameController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -82,16 +89,16 @@
             <GridPane fx:id="gridPane" layoutX="280.0" layoutY="2.0" prefHeight="720.0" prefWidth="720.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="97.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="0.0" prefWidth="59.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="56.000018310546864" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.0" minWidth="0.0" prefWidth="58.40004882812502" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="5.0" prefWidth="59.59996337890624" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="57.20003662109377" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="58.19999999999999" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="0.0" prefWidth="57.99998779296874" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="0.0" prefWidth="54.199987792968784" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="0.0" prefWidth="61.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="57.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="72.0" minWidth="0.0" prefWidth="59.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="5.0" prefWidth="59.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="58.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="59.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="0.0" prefWidth="57.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="0.0" prefWidth="56.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="0.0" prefWidth="60.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="107.20000000000005" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="98.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="94.8" vgrow="SOMETIMES" />
@@ -413,6 +420,66 @@
                         <Font name="Copperplate Gothic Light" size="9.0" />
                      </font>
                   </Label>
+                  <ImageView fx:id="diceOne1" fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceOne.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceOne2" fitHeight="57.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceTwo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceOne3" fitHeight="57.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceThree.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceOne4" fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceFour.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceOne5" fitHeight="57.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceFive.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceOne6" fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceSix.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceTwo1" fitHeight="55.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceOne.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceTwo2" fitHeight="56.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceTwo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceTwo3" fitHeight="57.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceThree.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceTwo4" fitHeight="57.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceFour.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceTwo5" fitHeight="55.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceFive.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="diceTwo6" fitHeight="55.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <image>
+                        <Image url="@../../../dice/diceSix.png" />
+                     </image>
+                  </ImageView>
                </children>
             </GridPane>
          </children>

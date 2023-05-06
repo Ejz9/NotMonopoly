@@ -92,7 +92,10 @@ public class TradeScreen {
     Button waterWorksButton;
     @FXML
     Button electricCompanyButton;
-    Button tradeButton;
+    @FXML
+    Button confirmButton;
+    @FXML
+    Button backButton;
     @FXML
     TextArea tradeCartTextArea;
     List<Property> propertyList;
