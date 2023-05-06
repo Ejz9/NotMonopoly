@@ -154,8 +154,42 @@ public class GameController {
 	public GameController() throws IOException {
 	}
 
+	public void initPropertyLabels() {
+		Label1.setText(String.format("$ %d", spaces[1].getPrice()));
+		Label3.setText(String.format("$ %d", spaces[3].getPrice()));
+		Label4.setText(String.format("$ %d", spaces[4].getActiveRent()));
+		Label5.setText(String.format("$ %d", spaces[5].getPrice()));
+		Label6.setText(String.format("$ %d", spaces[6].getPrice()));
+		Label8.setText(String.format("$ %d", spaces[8].getPrice()));
+		Label9.setText(String.format("$ %d", spaces[9].getPrice()));
+		Label11.setText(String.format("$ %d", spaces[11].getPrice()));
+		Label12.setText(String.format("$ %d", spaces[12].getPrice()));
+		Label13.setText(String.format("$ %d", spaces[13].getPrice()));
+		Label14.setText(String.format("$ %d", spaces[14].getPrice()));
+		Label15.setText(String.format("$ %d", spaces[15].getPrice()));
+		Label16.setText(String.format("$ %d", spaces[16].getPrice()));
+		Label18.setText(String.format("$ %d", spaces[18].getPrice()));
+		Label19.setText(String.format("$ %d", spaces[19].getPrice()));
+		Label21.setText(String.format("$ %d", spaces[21].getPrice()));
+		Label23.setText(String.format("$ %d", spaces[23].getPrice()));
+		Label24.setText(String.format("$ %d", spaces[24].getPrice()));
+		Label25.setText(String.format("$ %d", spaces[25].getPrice()));
+		Label26.setText(String.format("$ %d", spaces[26].getPrice()));
+		Label27.setText(String.format("$ %d", spaces[27].getPrice()));
+		Label28.setText(String.format("$ %d", spaces[28].getPrice()));
+		Label29.setText(String.format("$ %d", spaces[29].getPrice()));
+		Label31.setText(String.format("$ %d", spaces[31].getPrice()));
+		Label32.setText(String.format("$ %d", spaces[32].getPrice()));
+		Label34.setText(String.format("$ %d", spaces[34].getPrice()));
+		Label35.setText(String.format("$ %d", spaces[35].getPrice()));
+		Label37.setText(String.format("$ %d", spaces[37].getPrice()));
+		Label38.setText(String.format("$ %d", spaces[38].getActiveRent()));
+		Label39.setText(String.format("$ %d", spaces[39].getPrice()));
+	}
+
 	public void initGameboard() {
 		runSetup();
+		initPropertyLabels();
 		initPieceCoords();
 		pieces.put(0, player1Piece);
 		pieces.put(1, player2Piece);

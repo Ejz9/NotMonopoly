@@ -124,23 +124,6 @@ public class SetupGameBoard {
                     coordinateIndex += 2;
                 }
             }
-			/*int i = 0;
-			for (int x = BOARD_SIZE - 1; x > 0; x--) {
-				spaces[i].setCoordinates(x, BOARD_SIZE - 1);
-				i++;
-			}
-			for (int y = BOARD_SIZE - 1; y > 0; y--) {
-				spaces[i].setCoordinates(0, y);
-				i++;
-			}
-			for (int x = 0; x < BOARD_SIZE; x++) {
-				spaces[i].setCoordinates(x, 0);
-				i++;
-			}
-			for (int y = 0; y < BOARD_SIZE; y++) {
-				spaces[i].setCoordinates(BOARD_SIZE - 1, y);
-				i++;
-			}*/
         }
         return spaces;
     }
