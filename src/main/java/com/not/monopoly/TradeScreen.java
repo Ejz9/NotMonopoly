@@ -149,24 +149,28 @@ public class TradeScreen {
     public void handlePlayerOneTradeButton() {
         propertyList = players.get(0).getProperties();
         resetPlayerButtons();
+        resetButtons();
         playerOneTradeButton.setDisable(true);
         handleGridFrame(propertyList);
     }
     public void handlePlayerTwoTradeButton() {
         propertyList = players.get(1).getProperties();
         resetPlayerButtons();
+        resetButtons();
         playerTwoTradeButton.setDisable(true);
         handleGridFrame(propertyList);
     }
     public void handlePlayerThreeTradeButton() {
         propertyList = players.get(2).getProperties();
         resetPlayerButtons();
+        resetButtons();
         playerThreeTradeButton.setDisable(true);
         handleGridFrame(propertyList);
     }
     public void handlePlayerFourTradeButton() {
         propertyList = players.get(3).getProperties();
         resetPlayerButtons();
+        resetButtons();
         playerFourTradeButton.setDisable(true);
         handleGridFrame(propertyList);
     }
@@ -397,11 +401,11 @@ public class TradeScreen {
     @FXML
     Button backButton;
     public void handleBackButton() throws IOException {
+        startPane.setVisible(true);
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
         Stage window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 1280, 720));
         resetButtons();
-        startPane.setVisible(true);
     }
 
     public void resetButtons() {
