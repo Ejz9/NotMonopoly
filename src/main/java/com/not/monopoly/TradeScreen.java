@@ -2,18 +2,31 @@ package com.not.monopoly;
 
 import com.not.monopoly.Objects.Property;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Properties;
 
+import static com.not.monopoly.Main.activePlayer;
 import static com.not.monopoly.Main.players;
 import static com.not.monopoly.PlayerCreationController.playerCount;
+import static com.not.monopoly.PropertyCreation.createSpaces;
 
 public class TradeScreen {
+    @FXML
+    Pane startPane;
+    @FXML
+    Button startButton;
     @FXML
     GridPane propertiesGridPane;
     @FXML
@@ -25,8 +38,7 @@ public class TradeScreen {
     @FXML
     Button playerFourTradeButton;
 
-    @FXML
-    Button cashButton;
+
     @FXML
     Button mediterraneanAvenueButton;
     @FXML
@@ -92,15 +104,9 @@ public class TradeScreen {
     Button waterWorksButton;
     @FXML
     Button electricCompanyButton;
-    @FXML
-    Button confirmButton;
-    @FXML
-    Button backButton;
-    @FXML
-    TextArea tradeCartTextArea;
     List<Property> propertyList;
 
-    List<String> spaces = PropertyCreation.createPropertyNamesList();
+    Property[] spaces = createSpaces();
     List<Button> buttonList = new ArrayList<>();
 
 
@@ -120,6 +126,7 @@ public class TradeScreen {
         }
         addButtons(mediterraneanAvenueButton, balticAvenueButton, orientalAvenueButton, vermontAvenueButton, connecticutAvenueButton, stCharlesPlaceButton, statesAvenueButton, virginiaAvenueButton, stJamesPlaceButton, tennesseeAvenueButton, newYorkAvenueButton, kentuckyAvenueButton, indianaAvenueButton, illinoisAvenueButton);
         addButtons(atlanticAvenueButton, ventnorAvenueButton, marvinGardensButton, pacificAvenueButton, northCarolinaAvenueButton, pennsylvaniaAvenueButton, parkPlaceButton, boardwalkButton, readingRailroadButton, pennsylvaniaAvenueButton, bandORailroadButton, shortLineButton, electricCompanyButton, waterWorksButton);
+        startPane.setVisible(false);
     }
 
     private void addButtons(Button mediterraneanAvenueButton, Button balticAvenueButton, Button orientalAvenueButton, Button vermontAvenueButton, Button connecticutAvenueButton, Button stCharlesPlaceButton, Button statesAvenueButton, Button virginiaAvenueButton, Button stJamesPlaceButton, Button tennesseeAvenueButton, Button newYorkAvenueButton, Button kentuckyAvenueButton, Button indianaAvenueButton, Button illinoisAvenueButton) {
@@ -141,19 +148,34 @@ public class TradeScreen {
 
     public void handlePlayerOneTradeButton() {
         propertyList = players.get(0).getProperties();
+        resetPlayerButtons();
+        playerOneTradeButton.setDisable(true);
         handleGridFrame(propertyList);
     }
     public void handlePlayerTwoTradeButton() {
         propertyList = players.get(1).getProperties();
+        resetPlayerButtons();
+        playerTwoTradeButton.setDisable(true);
         handleGridFrame(propertyList);
     }
     public void handlePlayerThreeTradeButton() {
         propertyList = players.get(2).getProperties();
+        resetPlayerButtons();
+        playerThreeTradeButton.setDisable(true);
         handleGridFrame(propertyList);
     }
     public void handlePlayerFourTradeButton() {
         propertyList = players.get(3).getProperties();
+        resetPlayerButtons();
+        playerFourTradeButton.setDisable(true);
         handleGridFrame(propertyList);
+    }
+
+    public void resetPlayerButtons() {
+        playerOneTradeButton.setDisable(false);
+        playerTwoTradeButton.setDisable(false);
+        playerThreeTradeButton.setDisable(false);
+        playerFourTradeButton.setDisable(false);
     }
 
     public void handleGridFrame(List<Property> propertyList) {
@@ -218,23 +240,168 @@ public class TradeScreen {
         }
     }
 
+    public void handleMediterraneanAvenueButton() {
+        Property property = spaces[1];
+        editPropertyOwner(property);
+        buttonList.get(0).setDisable(true);
+    }
+    public void handleBalticAvenueButton() {
+        Property property = spaces[3];
+        editPropertyOwner(property);
+        buttonList.get(1).setDisable(true);
+    }
+    public void handleOrientalAvenueButton() {
+        Property property = spaces[6];
+        editPropertyOwner(property);
+        buttonList.get(2).setDisable(true);
+    }
+    public void handleVermontAvenueButton() {
+        Property property = spaces[8];
+        editPropertyOwner(property);
+        buttonList.get(3).setDisable(true);
+    }
+    public void handleConnecticutAvenueButton() {
+        Property property = spaces[9];
+        editPropertyOwner(property);
+        buttonList.get(4).setDisable(true);
+    }
+    public void handleStCharlesPlaceButton() {
+        Property property = spaces[11];
+        editPropertyOwner(property);
+        buttonList.get(5).setDisable(true);
+    }
+    public void handleStatesAvenueButton() {
+        Property property = spaces[13];
+        editPropertyOwner(property);
+        buttonList.get(6).setDisable(true);
+    }
+    public void handleVirginiaAvenueButton() {
+        Property property = spaces[14];
+        editPropertyOwner(property);
+        buttonList.get(7).setDisable(true);
+    }
+    public void handleStJamesPlaceButton() {
+        Property property = spaces[16];
+        editPropertyOwner(property);
+        buttonList.get(8).setDisable(true);
+    }
+    public void handleTennesseeAvenueButton() {
+        Property property = spaces[18];
+        editPropertyOwner(property);
+        buttonList.get(9).setDisable(true);
+    }
+    public void handleNewYorkAvenueButton() {
+        Property property = spaces[19];
+        editPropertyOwner(property);
+        buttonList.get(10).setDisable(true);
+    }
+    public void handleKentuckyAvenueButton() {
+        Property property = spaces[21];
+        editPropertyOwner(property);
+        buttonList.get(11).setDisable(true);
+    }
+    public void handleIndianaAvenueButton() {
+        Property property = spaces[23];
+        editPropertyOwner(property);
+        buttonList.get(12).setDisable(true);
+    }
+    public void handleIllinoisAvenueButton() {
+        Property property = spaces[24];
+        editPropertyOwner(property);
+        buttonList.get(13).setDisable(true);
+    }
+    public void handleAtlanticAvenueButton() {
+        Property property = spaces[26];
+        editPropertyOwner(property);
+        buttonList.get(14).setDisable(true);
+    }
+    public void hadleVentnorAvenueButton() {
+        Property property = spaces[27];
+        editPropertyOwner(property);
+        buttonList.get(15).setDisable(true);
+    }
+    public void handleMarvinGardensButton() {
+        Property property = spaces[29];
+        editPropertyOwner(property);
+        buttonList.get(16).setDisable(true);
+    }
+    public void handlePacificAvenueButton() {
+        Property property = spaces[31];
+        editPropertyOwner(property);
+        buttonList.get(17).setDisable(true);
+    }
+    public void handleNorthCarolinaAvenueButton() {
+        Property property = spaces[32];
+        editPropertyOwner(property);
+        buttonList.get(18).setDisable(true);
+    }
+    public void handlePennsylvaniaAvenueButton() {
+        Property property = spaces[34];
+        editPropertyOwner(property);
+        buttonList.get(19).setDisable(true);
+    }
+    public void handleParkPlaceButton() {
+        Property property = spaces[37];
+        editPropertyOwner(property);
+        buttonList.get(20).setDisable(true);
+    }
+    public void handleBoardwalkButton() {
+        Property property = spaces[39];
+        editPropertyOwner(property);
+        buttonList.get(21).setDisable(true);
+    }
+    public void handleReadingRailroadButton() {
+        Property property = spaces[5];
+        editPropertyOwner(property);
+        buttonList.get(22).setDisable(true);
+    }
+    public void handlePennsylvaniaRailroadButton() {
+        Property property = spaces[15];
+        editPropertyOwner(property);
+        buttonList.get(23).setDisable(true);
+    }
+    public void handleBandORailroadButton() {
+        Property property = spaces[25];
+        editPropertyOwner(property);
+        buttonList.get(24).setDisable(true);
+    }
+    public void handleShortLineButton() {
+        Property property = spaces[35];
+        editPropertyOwner(property);
+        buttonList.get(25).setDisable(true);
+    }
+    public void handleWaterWorksButton() {
+        Property property = spaces[28];
+        editPropertyOwner(property);
+        buttonList.get(26).setDisable(true);
+    }
+    public void handleElectricCompanyButton() {
+        Property property = spaces[12];
+        editPropertyOwner(property);
+        buttonList.get(27).setDisable(true);
+    }
 
-    public void handleButton() {
-        for (Button button : buttonList) {
-            if (button.isPressed()) {
-                button.setDisable(true);
-                tradeCartTextArea.appendText(String.format("%n%s", spaces.get(buttonList.indexOf(button))));
-            }
+    public void editPropertyOwner(Property property) {
+        if (playerOneTradeButton.isDisabled()) {
+            players.get(0).addProperty(property);
+        } else if (playerTwoTradeButton.isDisabled()) {
+            players.get(1).addProperty(property);
+        } else if (playerThreeTradeButton.isDisabled()) {
+            players.get(2).addProperty(property);
+        } else if (playerFourTradeButton.isDisabled()) {
+            players.get(3).addProperty(property);
         }
+        players.get(activePlayer).removeProperty(property);
     }
 
-    public void handleCancelButton() {
+    @FXML
+    Button backButton;
+    public void handleBackButton() throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main-board.fxml")));
+        Stage window = (Stage) backButton.getScene().getWindow();
+        window.setScene(new Scene(root, 1280, 720));
         resetButtons();
-
-    }
-
-    public void handleConfirmButton() {
-
+        startPane.setVisible(true);
     }
 
     public void resetButtons() {

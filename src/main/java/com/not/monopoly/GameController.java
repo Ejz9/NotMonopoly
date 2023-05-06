@@ -4,16 +4,21 @@ import com.not.monopoly.DONOTSUBMIT.Debug;
 import com.not.monopoly.Objects.Player;
 import com.not.monopoly.Objects.Property;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Random;
 
 import static com.not.monopoly.Main.*;
@@ -442,8 +447,10 @@ public class GameController {
 		}
 	}
 
-	public void handleTradeButton() {
-
+	public void handleTradeButton() throws IOException {
+		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("trade-screen.fxml")));
+		Stage window = (Stage) tradeButton.getScene().getWindow();
+		window.setScene(new Scene(root, 1280, 720));
 	}
 
 	public void handleEndTurnButton() {

@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -27,13 +26,7 @@
                   <Font size="60.0" />
                </font>
             </Label>
-            <TextArea fx:id="tradeCartTextArea" blendMode="MULTIPLY" editable="false" prefHeight="720.0" prefWidth="171.0" promptText="TradeList" />
-            <Button blendMode="MULTIPLY" layoutX="37.0" layoutY="673.0" mnemonicParsing="false" text="Confirm">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button blendMode="MULTIPLY" layoutX="37.0" layoutY="629.0" mnemonicParsing="false" text="Remove">
+            <Button fx:id="backButton" blendMode="MULTIPLY" layoutX="566.0" layoutY="673.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back to Game">
                <font>
                   <Font size="20.0" />
                </font>
@@ -82,143 +75,138 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="cashButton" blendMode="MULTIPLY" mnemonicParsing="false" text="\$$$">
-                     <font>
-                        <Font size="31.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="mediterraneanAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Mediterranean&#10;Avenue" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="mediterraneanAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleMediterraneanAvenueButton" text="Mediterranean&#10;Avenue" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Button>
-                  <Button fx:id="balticAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Baltic&#10;Avenue" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="balticAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleBalticAvenueButton" text="Baltic&#10;Avenue" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="orientalAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Oriental&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="orientalAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleOrientalAvenueButton" text="Oriental&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="vermontAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Vermont&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="vermontAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleVermontAvenueButton" text="Vermont&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button fx:id="connecticutAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Connecticut&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="connecticutAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleConnecticutAvenueButton" text="Connecticut&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="stCharlesPlaceButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="St. Charles&#10;Place" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="stCharlesPlaceButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleStCharlesPlaceButton" text="St. Charles&#10;Place" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="statesAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="States&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button fx:id="statesAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleStatesAvenueButton" text="States&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="virginiaAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Virginia&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="virginiaAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleVirginiaAvenueButton" text="Virginia&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="stJamesPlaceButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="St. James&#10;Place" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="stJamesPlaceButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleStJamesPlaceButton" text="St. James&#10;Place" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button fx:id="tennesseeAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Tennessee&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="tennesseeAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleTennesseeAvenueButton" text="Tennessee&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="newYorkAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="New York&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="newYorkAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleNewYorkAvenueButton" text="New York&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="kentuckyAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Kentucky&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="kentuckyAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleKentuckyAvenueButton" text="Kentucky&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button fx:id="indianaAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Indiana&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="indianaAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleIndianaAvenueButton" text="Indiana&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="illinoisAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Illinois&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="illinoisAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleIllinoisAvenueButton" text="Illinois&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="atlanticAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Atlantic&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="atlanticAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleAtlanticAvenueButton" text="Atlantic&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="ventnorAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Ventnor&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="ventnorAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#hadleVentnorAvenueButton" text="Ventnor&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="marvinGardensButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Marvin&#10;Gardens" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="marvinGardensButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleMarvinGardensButton" text="Marvin&#10;Gardens" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="pacificAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Pacific&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="pacificAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handlePacificAvenueButton" text="Pacific&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="northCarolinaAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="North Carolina&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <Button fx:id="pennsylvaniaAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Pennsylvania&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="northCarolinaAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleNorthCarolinaAvenueButton" text="North Carolina&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="pennsylvaniaAvenueButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handlePennsylvaniaAvenueButton" text="Pennsylvania&#10;Avenue" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button fx:id="parkPlaceButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="ParkPlace" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="parkPlaceButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleParkPlaceButton" text="ParkPlace" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="boardwalkButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Boardwalk" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="boardwalkButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleBoardwalkButton" text="Boardwalk" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="readingRailroadButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Reading&#10;Railroad" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER">
+                  <Button fx:id="readingRailroadButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleReadingRailroadButton" text="Reading&#10;Railroad" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="pennsylvaniaRailroadButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Pennsylvania&#10;Railroad" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="pennsylvaniaRailroadButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handlePennsylvaniaRailroadButton" text="Pennsylvania&#10;Railroad" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button fx:id="bandORailroadButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="B. &amp; O.&#10;Railroad" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="bandORailroadButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleBandORailroadButton" text="B. &amp; O.&#10;Railroad" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="shortLineButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Short Line" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="shortLineButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleShortLineButton" text="Short Line" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="waterWorksButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Water&#10;Works" textAlignment="CENTER" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                  <Button fx:id="waterWorksButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleWaterWorksButton" text="Water&#10;Works" textAlignment="CENTER" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="electricCompanyButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" text="Electric&#10;Company" textAlignment="CENTER" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="electricCompanyButton" blendMode="MULTIPLY" disable="true" mnemonicParsing="false" onAction="#handleElectricCompanyButton" text="Electric&#10;Company" textAlignment="CENTER" GridPane.columnIndex="9" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -234,7 +222,7 @@
                   <Image url="@../../../menuImages/blackImage.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="startButton" layoutX="538.0" layoutY="296.0" mnemonicParsing="false" text="Start">
+            <Button fx:id="startButton" layoutX="538.0" layoutY="296.0" mnemonicParsing="false" onAction="#runTrade" text="Start">
                <font>
                   <Font size="60.0" />
                </font>
